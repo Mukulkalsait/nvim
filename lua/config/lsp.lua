@@ -1,0 +1,24 @@
+-- local cmd = require("lazy.core.handler.cmd")
+-- html error fingind html-lsp config done by me and chatgpt
+-- return {
+--   -- local lspconfig = require("lspconfig")
+--
+--   -- Set up HTML LSP
+--   require("lspconfig").html.setup({
+--     cmd = { "/home/mukuldk/.local/share/pnpm/global/5/node_modules/vscode-html-languageserver-bin/" },
+--     capabilities = require("cmp_nvim_lsp").default_capabilities(),
+--     on_attach = function(_, bufnr)
+--       -- Keybinding for formatting
+--       vim.api.nvim_buf_set_keymap(
+--         bufnr,
+--         "n",
+--         "<leader>cx",
+--         ":lua vim.lsp.buf.formatting()<CR>",
+--         { noremap = true, silent = true }
+--       )
+--     end,
+--   }),
+--
+--   -- Emmet setup (optional)
+--   -- vim.g.user_emmet_leader_key = "<C-E>" -- Set Emmet leader key if desired
+-- }
