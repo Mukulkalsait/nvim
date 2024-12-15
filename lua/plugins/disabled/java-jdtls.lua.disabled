@@ -1,13 +1,13 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      -- Remove any existing jdtls setup in this section
-      servers = {
-        jdtls = { enabled = false }, -- Disable default JDTLS setup
-      },
-    },
-  },
+  -- {
+  --   "neovim/nvim-lspconfig",
+  --   opts = {
+  --     -- Remove any existing jdtls setup in this section
+  --     servers = {
+  --       jdtls = { enabled = false }, -- Disable default JDTLS setup
+  --     },
+  --   },
+  -- },
   {
     "mfussenegger/nvim-jdtls",
     ft = "java",
