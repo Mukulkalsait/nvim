@@ -29,7 +29,7 @@ return {
       servers = {
         -- Web Development
         html = {
-          filetypes = { "html", "php" },
+          filetypes = { "html", "php", "javascript" },
           settings = {
             html = {
               suggest = {
@@ -96,20 +96,20 @@ return {
         },
 
         -- Java
-        jdtls = {
-          settings = {
-            java = {
-              configuration = {
-                runtimes = {
-                  {
-                    name = "JavaSE-17",
-                    path = "/usr/lib/jvm/java-17-openjdk/",
-                  },
-                },
-              },
-            },
-          },
-        },
+        -- jdtls = {
+        --   settings = {
+        --     java = {
+        --       configuration = {
+        --         runtimes = {
+        --           {
+        --             name = "JavaSE-17",
+        --             path = "/usr/lib/jvm/java-17-openjdk/",
+        --           },
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
 
         -- JavaScript/TypeScript
         vtsls = {
@@ -136,14 +136,14 @@ return {
       -- Setup Handlers
       setup = {
         -- Custom setup for specific language servers
-        jdtls = function(_, opts)
-          vim.api.nvim_create_autocmd("FileType", {
-            pattern = "java",
-            callback = function()
-              require("jdtls").start_or_attach(opts)
-            end,
-          })
-        end,
+        -- jdtls = function(_, opts)
+        --   vim.api.nvim_create_autocmd("FileType", {
+        --     pattern = "java",
+        --     callback = function()
+        --       require("jdtls").start_or_attach(opts)
+        --     end,
+        --   })
+        -- end,
 
         -- Tailwind CSS custom setup
         tailwindcss = function(_, opts)
@@ -152,7 +152,7 @@ return {
       },
     },
 
-    -- LSP Configuration
+    -- -- LSP Configuration
     -- config = function(_, opts)
     --   local lspconfig = require("lspconfig")
     --   local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -215,11 +215,11 @@ return {
         command = "php-debug-adapter",
       }
 
-      dap.adapters.java = {
-        type = "server",
-        host = "127.0.0.1",
-        port = 5005,
-      }
+      -- dap.adapters.java = {
+      --   type = "server",
+      --   host = "127.0.0.1",
+      --   port = 5005,
+      -- }
 
       -- Launch Configurations
       dap.configurations.php = {

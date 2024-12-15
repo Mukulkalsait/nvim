@@ -1,7 +1,3 @@
--- local tailwind = require("lazyvim.plugins.extras.lang.tailwind")
--- local sqlls = require("lspconfig.configs.sqlls")
--- local lspconfig = require("lspconfig")
-
 return {
   {
     "neovim/nvim-lspconfig",
@@ -13,29 +9,6 @@ return {
         tailwindcss = {},
         eslint = {},
         sqlls = {},
-        -- ast_grep = {
-        --   cmd = { "ast-grep", "lsp" },
-        --   root_dir = function(fname)
-        --     return lspconfig.util.root_pattern(".git")(fname) or vim.fn.getcwd()
-        --   end,
-        --   filetypes = {
-        --     "c",
-        --     "cpp",
-        --     "rust",
-        --     "go",
-        --     "java",
-        --     "python",
-        --     "javascript",
-        --     "typescript",
-        --     "html",
-        --     "css",
-        --     "kotlin",
-        --     "dart",
-        --     "lua",
-        --     "php",
-        --   },
-        --   autostart = true,
-        -- },
       },
     },
   },
@@ -53,7 +26,7 @@ return {
       },
     },
   },
-  --TODO:
+  -- TODO:
   -- {
   --   "hrsh7th/nvim-cmp",
   --   dependencies = {
