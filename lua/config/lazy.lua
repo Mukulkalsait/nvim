@@ -14,6 +14,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+-- costume performance.lua config
+require("config.performance")
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -55,4 +58,16 @@ require("lazy").setup({
   --   "jose-elias-alvarez/null-ls.nvim",
   --   requires = { "nvim-lua/plenary.nvim" },
   -- },
+})
+
+-- DX: Debuging
+-- this code will show if HTML is slowly saving.
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.html",
+  callback = function()
+    print("Save starting")
+    vim.defer_fn(function()
+      print("Save completed")
+    end, 0)
+  end,
 })

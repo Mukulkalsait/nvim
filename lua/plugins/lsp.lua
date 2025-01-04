@@ -94,23 +94,6 @@ return {
             },
           },
         },
-
-        -- Java
-        -- jdtls = {
-        --   settings = {
-        --     java = {
-        --       configuration = {
-        --         runtimes = {
-        --           {
-        --             name = "JavaSE-17",
-        --             path = "/usr/lib/jvm/java-17-openjdk/",
-        --           },
-        --         },
-        --       },
-        --     },
-        --   },
-        -- },
-
         -- JavaScript/TypeScript
         vtsls = {
           settings = {
@@ -135,15 +118,6 @@ return {
 
       -- Setup Handlers
       setup = {
-        -- Custom setup for specific language servers
-        -- jdtls = function(_, opts)
-        --   vim.api.nvim_create_autocmd("FileType", {
-        --     pattern = "java",
-        --     callback = function()
-        --       require("jdtls").start_or_attach(opts)
-        --     end,
-        --   })
-        -- end,
 
         -- Tailwind CSS custom setup
         tailwindcss = function(_, opts)
@@ -151,24 +125,6 @@ return {
         end,
       },
     },
-
-    -- -- LSP Configuration
-    -- config = function(_, opts)
-    --   local lspconfig = require("lspconfig")
-    --   local capabilities = require("cmp_nvim_lsp").default_capabilities()
-    --
-    --   -- Setup each language server
-    --   for server, server_opts in pairs(opts.servers) do
-    --     local merged_opts = vim.tbl_deep_extend("force", {
-    --       capabilities = capabilities,
-    --     }, server_opts)
-    --
-    --     lspconfig[server].setup(merged_opts)
-    --   end
-    --
-    --   -- Diagnostic configuration
-    --   vim.diagnostic.config(opts.diagnostics)
-    -- end,
   },
 
   -- Prettier Configuration
@@ -190,7 +146,7 @@ return {
       "php",
     },
     config = function()
-      vim.g["prettier#autoformat"] = 1
+      vim.g["prettier#autoformat"] = 1 --DX: It was 1
       vim.g["prettier#autoformat_require_pragma"] = 0
       vim.g["prettier#config#single_quote"] = "true"
     end,
@@ -214,12 +170,6 @@ return {
         type = "executable",
         command = "php-debug-adapter",
       }
-
-      -- dap.adapters.java = {
-      --   type = "server",
-      --   host = "127.0.0.1",
-      --   port = 5005,
-      -- }
 
       -- Launch Configurations
       dap.configurations.php = {
