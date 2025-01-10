@@ -51,6 +51,8 @@ require("lazy").setup({
         "tarPlugin",
         "tohtml",
         "zipPlugin",
+        --tabline B: using => tabline.lua
+        "akinsho/bufferline.nvim",
       },
     },
   },

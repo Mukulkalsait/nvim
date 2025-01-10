@@ -10,7 +10,7 @@ vim.o.wrapscan = false -- Don't wrap searches around the end of file
 vim.o.cursorline = false -- Disable cursorline for performance
 vim.o.ruler = false -- Disable ruler for performance
 vim.o.showcmd = false -- Don't show command in bottom bar
-vim.o.shell = "/bin/bash" -- Use bash for shell commands (faster than fish/zsh)
+-- vim.o.shell = "/bin/bash" -- Use bash for shell commands (faster than fish/zsh)
 
 -- Memory management
 vim.o.hidden = false -- Don't keep buffers in memory
