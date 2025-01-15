@@ -3,3 +3,4 @@
 -- Add any additional keymaps here
 vim.api.nvim_set_keymap("n", "<leader>cp", ": ConformInfo <enter>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>cP", ":!prettier --write %<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>tL", ":Leet<CR>", { noremap = true, silent = true })
