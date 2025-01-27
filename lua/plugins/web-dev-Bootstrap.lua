@@ -289,7 +289,6 @@ return {
       "svelte",
       "yaml",
       "html",
-      "php",
     },
     config = function()
       vim.g["prettier#autoformat"] = 1
@@ -340,5 +339,18 @@ return {
         "typescriptreact",
       })
     end,
+  },
+  --  for php formator
+  {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        php = { "php-cs-fixer" },
+      },
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_fallback = true,
+      },
+    },
   },
 }
