@@ -347,10 +347,10 @@ return {
       formatters_by_ft = {
         php = { "php-cs-fixer" },
       },
-      format_on_save = {
-        timeout_ms = 500,
-        lsp_fallback = true,
-      },
+      -- format_on_save = {
+      --   timeout_ms = 500,
+      --   lsp_fallback = true,
+      -- },
     },
   },
 }

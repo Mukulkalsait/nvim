@@ -1,8 +1,9 @@
-bash:
+## bash:
 
 composer global require friendsofphp/php-cs-fixer
 
-pnpm list -g --depth 0  
+## pnpm list -g --depth 0
+
 Legend: production dependency, optional only, dev only
 
 /home/mukuldk/.local/share/pnpm/global/5
