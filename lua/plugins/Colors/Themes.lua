@@ -22,9 +22,10 @@ return {
   --
   --       terminal_colors = false,
   --
-  --       -- Use caching to improve performance - WARNING: experimental feature - expect the unexpected!
+  --       --WARNING:
+  --       -- Use caching to improve performance - experimental feature - expect the unexpected!
   --       -- Early testing shows a 60-70% improvement in startup time. YMMV. Disables dynamic light/dark theme switching.
-  --       cache = false, -- generate cache with :CyberdreamBuildCache and clear with :CyberdreamClearCache
+  --         cache = false, -- generate cache with :CyberdreamBuildCache and clear with :CyberdreamClearCache
   --
   --       theme = {
   --         variant = "default", -- use "light" for the light variant. Also accepts "auto" to set dark or light colors based on the current value of `vim.o.background`
@@ -90,6 +91,7 @@ return {
     "catppuccin/nvim",
     name = "catppuccin",
     opts = {
+
       term_colors = true,
       transparent_background = false,
       styles = {
@@ -122,6 +124,20 @@ return {
           color_mode = true,
         },
       },
+    },
+  },
+  {
+    "floke/tokyonight.nvim",
+    opts = {
+      term_colors = true,
+      transparent = false,
+      styles = {
+        sidebars = "dark",
+        floats = "transparent",
+      },
+      on_colors = function(colors)
+        colors.bg = "#000000"
+      end,
     },
   },
 }
