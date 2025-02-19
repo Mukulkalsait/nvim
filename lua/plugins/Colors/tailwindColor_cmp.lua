@@ -12,20 +12,20 @@ return {
       },
     },
   },
-  {
-    "NvChad/nvim-colorizer.lua",
-    opts = {
-      user_default_options = {
-        emmet_ls = {},
-        intelephense = {},
-        phpactor = {},
-        tailwindcss = {},
-        tailwind = {},
-        eslint = {},
-        sqlls = {},
-      },
-    },
-  },
+  -- {
+  --   "NvChad/nvim-colorizer.lua",
+  --   opts = {
+  --     user_default_options = {
+  --       emmet_ls = {},
+  --       intelephense = {},
+  --       phpactor = {},
+  --       tailwindcss = {},
+  --       tailwind = {},
+  --       eslint = {},
+  --       sqlls = {},
+  --     },
+  --   },
+  -- },
   -- TODO:
   {
     "hrsh7th/nvim-cmp",
