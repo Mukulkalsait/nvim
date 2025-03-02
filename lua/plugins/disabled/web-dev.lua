@@ -262,7 +262,6 @@ return {
       "svelte",
       "yaml",
       "html",
-      "php",
     },
     config = function()
       vim.g["prettier#autoformat"] = 1

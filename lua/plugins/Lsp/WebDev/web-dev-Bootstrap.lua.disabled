@@ -273,30 +273,30 @@ return {
     },
   },
   -- Prettier Configuration
-  {
-    "prettier/vim-prettier",
-    -- enabled = false,
-    build = "npm install",
-    ft = {
-      "javascript",
-      "typescript",
-      "css",
-      "scss",
-      "json",
-      "graphql",
-      "markdown",
-      "vue",
-      "svelte",
-      "yaml",
-      "html",
-    },
-    config = function()
-      vim.g["prettier#autoformat"] = 1
-      vim.g["prettier#autoformat_require_pragma"] = 0
-      vim.g["prettier#config#single_quote"] = "true"
-      vim.g["prettier#config#trailing_comma"] = "all"
-    end,
-  },
+  -- {
+  --   "prettier/vim-prettier",
+  --   enabled = false,
+  --   build = "npm install",
+  --   ft = {
+  --     "javascript",
+  --     "typescript",
+  --     "css",
+  --     "scss",
+  --     "json",
+  --     "graphql",
+  --     "markdown",
+  --     "vue",
+  --     "svelte",
+  --     "yaml",
+  --     "html",
+  --   },
+  --   config = function()
+  --     vim.g["prettier#autoformat"] = 1
+  --     vim.g["prettier#autoformat_require_pragma"] = 0
+  --     vim.g["prettier#config#single_quote"] = "true"
+  --     vim.g["prettier#config#trailing_comma"] = "all"
+  --   end,
+  -- },
   -- Linting Configuration
   {
     "mfussenegger/nvim-lint",
@@ -347,10 +347,10 @@ return {
       formatters_by_ft = {
         php = { "php-cs-fixer" },
       },
-      -- format_on_save = {
-      --   timeout_ms = 500,
-      --   lsp_fallback = true,
-      -- },
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_fallback = true,
+      },
     },
   },
 }
