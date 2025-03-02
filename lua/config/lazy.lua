@@ -23,10 +23,9 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
     { import = "plugins" },
-    { import = "plugins/Lsp" },
     { import = "plugins/Lsp/WebDev" },
     -- { import = "plugins/Lsp/Rust" },
-    { import = "plugins/Lsp/Java" },
+    -- { import = "plugins/Lsp/Java" },
     { import = "plugins/Themes" },
     { import = "plugins/Utility" },
     { import = "plugins/Colors" },
