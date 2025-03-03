@@ -2,13 +2,14 @@ return {
   -- LSP Configuration
   {
     "neovim/nvim-lspconfig",
+    event = { "BufReadPre", "BufNewFile" }, -- Y: Only load when actually editing files :speedIncrease
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "folke/neodev.nvim",
     },
     opts = {
-      -- Global LSP Settings
+      -- IMP: Global LSP Settings
       diagnostics = {
         underline = true,
         update_in_insert = false,
@@ -19,9 +20,9 @@ return {
         },
         severity_sort = true,
       },
-      -- Specific Language Server Configurations
+      -- R: Specific Language Server Configurations
       servers = {
-        -- HTML (with Bootstrap support)
+        -- B:HTML (with Bootstrap support)
         html = {
           filetypes = { "html", "php", "javascript" },
           settings = {
@@ -48,41 +49,6 @@ return {
                 documentation = true,
                 references = true,
               },
-              -- Add Bootstrap specific settings
-              customData = {
-                {
-                  name = "bootstrap5",
-                  description = "Bootstrap 5 Custom Data",
-                  version = "5.0",
-                  globalAttributes = {
-                    ["class"] = {
-                      values = {
-                        "container",
-                        "container-fluid",
-                        "row",
-                        "col",
-                        "btn",
-                        "btn-primary",
-                        "btn-secondary",
-                        "btn-success",
-                        "alert",
-                        "alert-primary",
-                        "card",
-                        "card-body",
-                        "form-control",
-                        "table",
-                        "table-striped",
-                        "d-flex",
-                        "justify-content-between",
-                        "align-items-center",
-                        "mt-3",
-                        "mb-3",
-                        "p-3",
-                      },
-                    },
-                  },
-                },
-              },
             },
           },
           init_options = {
@@ -94,7 +60,7 @@ return {
             provideFormatter = true,
           },
         },
-        -- CSS
+        -- B:CSS
         cssls = {
           settings = {
             css = {
@@ -106,7 +72,7 @@ return {
             },
           },
         },
-        -- Tailwind CSS
+        -- B:Tailwind CSS
         tailwindcss = {
           filetypes = {
             "html",
@@ -137,7 +103,7 @@ return {
             },
           },
         },
-        -- Emmet
+        -- B:Emmet
         emmet_ls = {
           filetypes = {
             "html",
@@ -159,30 +125,30 @@ return {
             },
           },
         },
-        -- JavaScript/TypeScript
+        -- B:JavaScript/TypeScript
         vtsls = {
           settings = {
             typescript = {
               inlayHints = {
-                parameterNames = { enabled = "all" },
-                parameterTypes = { enabled = true },
-                variableTypes = { enabled = true },
-                propertyDeclarationTypes = { enabled = true },
+                parameterNames = { enabled = "all" }, --Y: Reduced from "all" to "literals"
+                parameterTypes = { enabled = true }, --  Can be disabled for :SpeedIncrease
+                variableTypes = { enabled = true }, -- same
+                propertyDeclarationTypes = { enabled = true }, -- same
                 functionLikeReturnTypes = { enabled = true },
               },
             },
             javascript = {
               inlayHints = {
-                parameterNames = { enabled = "all" },
-                parameterTypes = { enabled = true },
-                variableTypes = { enabled = true },
-                propertyDeclarationTypes = { enabled = true },
+                parameterNames = { enabled = "all" }, --Y: Reduced from "all" to "literals"
+                parameterTypes = { enabled = true }, -- Can be disalbed for :SpeedIncrease
+                variableTypes = { enabled = true }, -- same
+                propertyDeclarationTypes = { enabled = true }, -- same
                 functionLikeReturnTypes = { enabled = true },
               },
             },
           },
         },
-        -- ESLint
+        -- B:ESLint
         eslint = {
           settings = {
             workingDirectory = { mode = "auto" },
@@ -196,9 +162,8 @@ return {
       },
     },
   },
-  -- Auto Tags
-  -- In webdev.lua, update the autotag section:
-  -- Auto Tags
+
+  -- R:Auto Tags
   {
     "windwp/nvim-ts-autotag",
     event = "InsertEnter",
@@ -206,17 +171,8 @@ return {
       require("nvim-ts-autotag").setup() -- Use default configuration
     end,
   },
-  -- Auto Pairs
-  -- Y:minimal config
-  -- {
-  --   "windwp/nvim-autopairs",
-  --   event = "InsertEnter",
-  --   opts = {
-  --     enable_check_bracket_line = true,
-  --     check_ts = true,
-  --   },
-  -- },
 
+  -- R:Auto Pairs
   -- Y: detaild config.
   {
     "windwp/nvim-autopairs",
@@ -230,6 +186,7 @@ return {
         javascript = { "template_string" },
         typescript = { "template_string" },
       },
+      -- fast_wrap = false, -- Y: can be -> Disabled for performance :SpeedIncrease
       fast_wrap = {
         map = "<M-e>",
         chars = { "{", "[", "(", '"', "'" },
@@ -242,7 +199,7 @@ return {
       },
     },
   },
-  -- Treesitter Configuration
+  -- R:Treesitter Configuration
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -268,12 +225,22 @@ return {
         enable = true,
         additional_vim_regex_highlighting = false,
       },
+      incremental_selection = { -- Y: for better speed.
+        enable = true,
+        keymaps = {
+          init_selection = "<C-space>",
+          node_incremental = "<C-space>",
+          scope_incremental = false,
+          node_decremental = "<bs>",
+        },
+      },
     },
   },
-  -- Linting Configuration
+  -- R: Linting Configuration
   {
     "mfussenegger/nvim-lint",
-    event = "VeryLazy",
+    event = "BufWritePost", -- Y: for  berrer performance only evoke on save not on textchange
+    -- event = "VeryLazy",   -- for
     config = function()
       local lint = require("lint")
       lint.linters_by_ft = {
@@ -284,23 +251,27 @@ return {
         css = { "stylelint" },
         php = { "phpcs" },
       }
-      vim.api.nvim_create_autocmd({ "BufWritePost", "TextChanged" }, {
+      -- Y: for  berrer performance only evoke on save not on textchange
+      -- vim.api.nvim_create_autocmd({ "BufWritePost", "TextChanged" }, {
+      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
         callback = function()
           require("lint").try_lint()
         end,
       })
     end,
   },
-  -- Additional Web Development Tools
+  -- R:Additional Web Development Tools
   {
     "folke/trouble.nvim",
+    cmd = { "TroubleToggle", "Trouble" }, -- Y: Only load when explicitly called
     opts = {
       use_diagnostic_signs = true,
     },
   },
-  -- Color highlighting in CSS/HTML
+  -- R:Color highlighting in CSS/HTML
   {
     "norcalli/nvim-colorizer.lua",
+    event = { "BufReadPost", "BufNewFile" }, -- Y: can be removed if we want it allways on.
     config = function()
       require("colorizer").setup({
         "css",
@@ -308,12 +279,12 @@ return {
         "html",
         "javascript",
         "typescript",
-        "javascriptreact",
-        "typescriptreact",
+        -- "javascriptreact",   -- Y: only on when we need REACT.
+        -- "typescriptreact",   -- same.
       })
     end,
   },
-  -- Ensure Mason installs all needed tools
+  -- R:Ensure Mason installs all needed tools
   {
     "williamboman/mason.nvim",
     opts = function(_, opts)
@@ -332,8 +303,11 @@ return {
       return opts
     end,
   },
+
+  -- R: To format the PHP With HTML files.
   {
     "stevearc/conform.nvim",
+    event = "BufWritePre", -- Y:Only load when saving files
     opts = {
       formatters_by_ft = {
         php = { "blade-formatter" },

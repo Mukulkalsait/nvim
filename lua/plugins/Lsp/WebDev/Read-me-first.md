@@ -26,3 +26,19 @@ after <leader>cf and solve the html error and then
 <!-- G: save the file which format with "blade-formater" -->
 
 we alos need java formater ni next time
+
+<!--IMP: RUST -->
+
+we lnstalled some rust Mason: and rust preaty much worked automatically.
+
+--this is the one that work every time we see it in
+
+    ◍ rustywind (keywords: angular, html, jsx, javascript, typescript, vue)
+
+-- this seem unusefull evern if INSTALLED.
+◍ codelldb (keywords: c, c++, rust, zig)
+◍ rust-analyzer rust_analyzer (keywords: rust)
+◍ rust_hdl vhdl_ls (keywords: vhdl)
+◍tarlark-rust starlark_rust (keywords: starlark)
+
+javascript in html i not working and jquery is not working.
