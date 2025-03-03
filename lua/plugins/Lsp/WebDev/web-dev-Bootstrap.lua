@@ -145,7 +145,34 @@ return {
                 propertyDeclarationTypes = { enabled = true }, -- same
                 functionLikeReturnTypes = { enabled = true },
               },
+              completions = {
+                completeFunctionCalls = true,
+              },
             },
+            completions = {
+              completeFunctionCalls = true,
+            },
+            -- Y:  this will be part of jquery if somethign goes workg stop this.
+            on_attach = function(client, bufnr)
+              -- Check if it's a jQuery project
+              local has_jquery = vim.fn.filereadable(vim.fn.getcwd() .. "/node_modules/@types/jquery") == 1
+                or vim.fn.filereadable(vim.fn.getcwd() .. "/jquery.js") == 1
+                or vim.fn.filereadable(vim.fn.getcwd() .. "/jquery.min.js") == 1
+
+              if has_jquery then
+                -- Add jQuery type definitions to the project
+                client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
+                  javascript = {
+                    suggestionActions = { enabled = true },
+                    implicitProjectConfig = {
+                      checkJs = true,
+                    },
+                  },
+                })
+                -- Apply the updated configuration
+                client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+              end
+            end,
           },
         },
         -- B:ESLint
@@ -299,7 +326,9 @@ return {
         "stylelint-lsp",
         "php-cs-fixer",
         "phpcs",
+        "typescript-language-server",
       })
+      vim.fn.system("pnpm add --global @types/jquery") -- Y: this will insure the jquery is installed with PNPM
       return opts
     end,
   },

@@ -5,3 +5,5 @@ require("config.lazy")
 vim.cmd("colorscheme cyberdream") -- Replace 'tokyonight' with your desired theme
 vim.o.signcolumn = "yes" -- Show sign column for diagnostics
 vim.o.updatetime = 250 -- Update delay for diagnostics
+-- Load performance optimizations
+require("config.performance")

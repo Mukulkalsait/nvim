@@ -42,3 +42,12 @@ we lnstalled some rust Mason: and rust preaty much worked automatically.
 ◍tarlark-rust starlark_rust (keywords: starlark)
 
 javascript in html i not working and jquery is not working.
+
+added various perfomance improvement thing in webdev.lua && performance.lua
+
+most of them can be turned of in case.
+
+ <!--WARNING: most imp thing is when file is larger than 1mb the treesitter will stop giving COLORS -->
+<!-- IMP:  NO COLORS in any file  -->
+
+so either stop it from performance.lua or close the biger file and reopen oter smaller files.
