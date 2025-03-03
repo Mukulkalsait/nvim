@@ -13,11 +13,7 @@ return {
       diagnostics = {
         underline = true,
         update_in_insert = false,
-        virtual_text = {
-          spacing = 2,
-          source = "if_many",
-          prefix = "●",
-        },
+        virtual_text = { spacing = 2, source = "if_many", prefix = "●" },
         severity_sort = true,
       },
       -- R: Specific Language Server Configurations
@@ -153,27 +149,27 @@ return {
               completeFunctionCalls = true,
             },
             -- Y:  this will be part of jquery if somethign goes workg stop this.
-            on_attach = function(client, bufnr)
-              -- Check if it's a jQuery project
-              local has_jquery = vim.fn.filereadable(vim.fn.getcwd() .. "/node_modules/@types/jquery") == 1
-                or vim.fn.filereadable(vim.fn.getcwd() .. "/jquery.js") == 1
-                or vim.fn.filereadable(vim.fn.getcwd() .. "/jquery.min.js") == 1
-
-              if has_jquery then
-                -- Add jQuery type definitions to the project
-                client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
-                  javascript = {
-                    suggestionActions = { enabled = true },
-                    implicitProjectConfig = {
-                      checkJs = true,
-                    },
-                  },
-                })
-                -- Apply the updated configuration
-                client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-              end
-            end,
           },
+          on_attach = function(client, bufnr)
+            -- Check if it's a jQuery project
+            local has_jquery = vim.fn.filereadable(vim.fn.getcwd() .. "/node_modules/@types/jquery") == 1
+              or vim.fn.filereadable(vim.fn.getcwd() .. "/jquery.js") == 1
+              or vim.fn.filereadable(vim.fn.getcwd() .. "/jquery.min.js") == 1
+
+            if has_jquery then
+              -- Add jQuery type definitions to the project
+              client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
+                javascript = {
+                  suggestionActions = { enabled = true },
+                  implicitProjectConfig = {
+                    checkJs = true,
+                  },
+                },
+              })
+              -- Apply the updated configuration
+              client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+            end
+          end,
         },
         -- B:ESLint
         eslint = {
