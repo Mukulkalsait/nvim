@@ -10,7 +10,7 @@ vim.o.ttimeoutlen = 10 -- Time in milliseconds to wait for a key code sequence
 vim.opt.redrawtime = 1500 -- less time spent redrawing the screen
 vim.opt.cursorline = false --disable coursorline :performance
 vim.opt.foldmethod = "manual" -- dont sue syntexfolding : speed
-vim.opt.synmaxcol = 120 -- only highlight first 120 columns
+-- vim.opt.synmaxcol = 120 -- only highlight first 120 columns
 
 -- Additional optimizations
 --vim.o.hidden = true -- dont keep buffers in memory
