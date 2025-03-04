@@ -6,7 +6,15 @@ vim.o.redrawtime = 1500 -- Time spent redrawing the screen
 vim.o.ttimeoutlen = 10 -- Time in milliseconds to wait for a key code sequence
 -- vim.o.wrapscan = false -- Don't wrap searches around the end of file
 
+--Special optimizations.
+vim.opt.redrawtime = 1500 -- less time spent redrawing the screen
+vim.opt.cursorline = false --disable coursorline :performance
+vim.opt.foldmethod = "manual" -- dont sue syntexfolding : speed
+vim.opt.synmaxcol = 120 -- only highlight first 120 columns
+
 -- Additional optimizations
+--vim.o.hidden = true -- dont keep buffers in memory
+vim.o.history = 100 -- history size limit.
 vim.o.cursorline = false -- Disable cursorline for performance
 vim.o.ruler = false -- Disable ruler for performance
 vim.o.showcmd = false -- Don't show command in bottom bar
