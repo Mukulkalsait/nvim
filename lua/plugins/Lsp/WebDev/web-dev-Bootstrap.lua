@@ -182,6 +182,13 @@ return {
             },
           },
         },
+        -- Y: the cmp_nvim_lsp is not found i have to install it somehow, only then this will work.
+        -- phpactor = {
+        --   capabilities = require("cmp_nvim_lsp").default_capabilities(),
+        --   on_attach = function(client, bufnr)
+        --     print("phpactor attached to buffer " .. bufnr)
+        --   end,
+        -- },
       },
     },
   },
