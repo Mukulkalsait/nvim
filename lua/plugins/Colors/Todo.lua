@@ -10,46 +10,78 @@ return {
         color = "error",
         alt = { "FIXME", "BUG", "FIXIT", "ISSUE" },
       },
+
+      --INFO:
       TODO = { icon = "✅", color = "info" },
+      --TODO:
       HACK = { icon = "🦆", color = "error" },
+      --HACK:
       WARN = { icon = "🔂", color = "warning" },
+      --WARN:
       NOTE = { icon = "📓", color = "hint" },
+      --NOTE:
       TEST = { icon = "⏲ ", color = "test" },
+      --TEST:
       PERF = { icon = "💻", color = "rest" },
+      --PERF:
       BASH = { icon = "", color = "head" },
+      --BASH:
       ZSH = { icon = "", color = "imp" },
-      --
+      --ZSH:
       NAV = { icon = "🗣", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
+      --HEAD:
       HEAD = { icon = "🔝", color = "head", alt = { "TESTING", "PASSED", "FAILED" } },
+      --TAG:
       TAG = { icon = "⭕", color = "tag", alt = { "TESTING", "PASSED", "FAILED" } },
+      --CARD:
       CARD = { icon = "🎴", color = "card", alt = { "TESTING", "PASSED", "FAILED" } },
+      --DIV:
       DIV = { icon = "🍱", color = "div", alt = { "TESTING", "PASSED", "FAILED" } },
       CLASS = { icon = "🏛️", color = "class", alt = { "TESTING", "PASSED", "FAILED" } },
+      --CLASS:
       ID = { icon = "🆔", color = "id", alt = { "TESTING", "PASSED", "FAILED" } },
+      --ID:
       FUN = { icon = "⨐", color = "fn", alt = { "TESTING", "PASSED", "FAILED" } },
+      --FUN:
       FUN_1 = { icon = "⨐", color = "warning", alt = { "TESTING", "PASSED", "FAILED" } },
+      --FUN_1:
       FUN_2 = { icon = "⨐", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
-      FUN_3 = { icon = "⨐", color = "", alt = { "TESTING", "PASSED", "FAILED" } },
-      --
+      --FUN_2:
+      FUN_3 = { icon = "⨐", color = "creamCHa", alt = { "TESTING", "PASSED", "FAILED" } },
+      --FUN_3:
       R = { icon = "🟥", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
+      --R:
       R2 = { icon = "🍎", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
+      --R2:
       B = { icon = "🟦", color = "bluex", alt = { "TESTING", "PASSED", "FAILED" } },
+      --B:
       B2 = { icon = "💙", color = "bluex", alt = { "TESTING", "PASSED", "FAILED" } },
+      --B2:
       G = { icon = "🟩", color = "greenx", alt = { "TESTING", "PASSED", "FAILED" } },
+      --G:
       G2 = { icon = "💚", color = "greenx", alt = { "TESTING", "PASSED", "FAILED" } },
+      --G2:
       Y = { icon = "🟨", color = "yellowx", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Y:
       Y2 = { icon = "💛", color = "yellowx", alt = { "TESTING", "PASSED", "FAILED" } },
-      --
+      --Y2:
       DX = { icon = "⛔", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
+      --DX:
       IMP = { icon = "👿", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
-
-      P1a = { icon = "", color = "greenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
-      P1b = { icon = "", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
-      P1c = { icon = "", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
-
-      P2a = { icon = "", color = "blackCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
-      P2b = { icon = "", color = "blueCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
-      P2c = { icon = "", color = "lightPinkCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
+      --IMP:
+      P1a = { icon = "1", color = "greenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --P1a:
+      P1b = { icon = "1", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --P1b:
+      P1c = { icon = "1", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --P1c:
+      --
+      P2a = { icon = "2", color = "blackCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
+      --P2a:
+      P2b = { icon = "2", color = "blueCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
+      --P2b:
+      P2c = { icon = "2", color = "lightPinkCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
+      --P2c:
     }
 
     M.colors = {
@@ -72,7 +104,7 @@ return {
       bluex = "#0D92F4",
       greenx = "#6EC207",
       yellowx = "#FFE700",
-      --new colorhunt
+      -- colorhunt
       pinkCHa = "#F7374F",
       greenCHa = "#5F8B4C",
       orangeCHa = "#EC5228",
@@ -81,11 +113,11 @@ return {
       blackCHa = "#000000",
       mehandiCHa = "#2C3930",
       lightCHa = "#B5828C",
-      --palet-1
+      -- colorhunt palet 1
       greenCHp1 = "#3E7B27",
       darkGreenCHp1 = "#123524",
       contrastGreenCHp1 = "#EFE3C2",
-      --palet-2
+      -- colorhunt palet 2
       blackCHp2 = "#2A3335",
       blueCHp2 = "#0A5EB0",
       lightPinkCHp2 = "#FCC6FF",
@@ -141,63 +173,3 @@ return {
     require("todo-comments").setup(M.options)
   end,
 }
-
--- tests --
---======================================================================================================
-
---TODO:
---======================================================================================================
---HACK:
---======================================================================================================
---WARN:
---======================================================================================================
---NOTE:
---======================================================================================================
---TEST:
---======================================================================================================
---PERF:
---======================================================================================================
---BASH:
---======================================================================================================
---ZSH:
---======================================================================================================
---INFO:
---
---HEAD:
---======================================================================================================
---TAG:
---======================================================================================================
---CARD:
---======================================================================================================
---DIV:
---======================================================================================================
---CLASS:
---======================================================================================================
---ID:
---======================================================================================================
---R:
---======================================================================================================
---B:
---======================================================================================================
---G:
---======================================================================================================
---Y:
---======================================================================================================
---R2:
---======================================================================================================
---B2:
---======================================================================================================
---G2:
---======================================================================================================
---Y2:
---======================================================================================================
---DX:
---======================================================================================================
---FUN:
---======================================================================================================
---FUN_1:
---======================================================================================================
---FUN_2:
---======================================================================================================
---FUN_3:
---======================================================================================================
