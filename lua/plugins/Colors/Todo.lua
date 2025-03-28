@@ -73,7 +73,12 @@ return {
       blackCHa = "#000000",
       mehandiCHa = "#2C3930",
       lightCHa = "#B5828C",
-      lightCHa = "#B5828C",
+      greenCHa = "#3E7B27",
+      darkGreenCHa = "#123524",
+      contrastGreenCHa = "#EFE3C2",
+      lightPinkCHa = "#FCC6FF",
+      lightPinkCHa = "#FCC6FF",
+      lightPinkCHa = "#FCC6FF",
     }
 
     M.options = {
