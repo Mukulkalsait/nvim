@@ -29,7 +29,7 @@ return {
       FUN = { icon = "⨐", color = "fn", alt = { "TESTING", "PASSED", "FAILED" } },
       FUN_1 = { icon = "⨐", color = "warning", alt = { "TESTING", "PASSED", "FAILED" } },
       FUN_2 = { icon = "⨐", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
-      FUN_3 = { icon = "⨐", color = "default", alt = { "TESTING", "PASSED", "FAILED" } },
+      FUN_3 = { icon = "⨐", color = "", alt = { "TESTING", "PASSED", "FAILED" } },
       --
       R = { icon = "🟥", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
       R2 = { icon = "🍎", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
@@ -64,6 +64,16 @@ return {
       bluex = "#0D92F4",
       greenx = "#6EC207",
       yellowx = "#FFE700",
+      --new colorhunt
+      pinkCHa = "#F7374F",
+      greenCHa = "#5F8B4C",
+      orangeCHa = "#EC5228",
+      creamCHa = "#FBFFE4",
+      brownCHa = "#854836",
+      blackCHa = "#000000",
+      mehandiCHa = "#2C3930",
+      lightCHa = "#B5828C",
+      lightCHa = "#B5828C",
     }
 
     M.options = {
