@@ -24,23 +24,30 @@ return {
       --TEST:
       PERF = { icon = "💻", color = "rest" },
       --PERF:
+      ---------------------------------------------
+
       BASH = { icon = "", color = "head" },
       --BASH:
       ZSH = { icon = "", color = "imp" },
       --ZSH:
+      ---------------------------------------------
+
       NAV = { icon = "🗣", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
-      --HEAD:
+      --NAV:
       HEAD = { icon = "🔝", color = "head", alt = { "TESTING", "PASSED", "FAILED" } },
-      --TAG:
+      --HEAD:
       TAG = { icon = "⭕", color = "tag", alt = { "TESTING", "PASSED", "FAILED" } },
-      --CARD:
+      --TAG:
       CARD = { icon = "🎴", color = "card", alt = { "TESTING", "PASSED", "FAILED" } },
-      --DIV:
+      --CARD:
       DIV = { icon = "🍱", color = "div", alt = { "TESTING", "PASSED", "FAILED" } },
+      --DIV:
       CLASS = { icon = "🏛️", color = "class", alt = { "TESTING", "PASSED", "FAILED" } },
       --CLASS:
       ID = { icon = "🆔", color = "id", alt = { "TESTING", "PASSED", "FAILED" } },
       --ID:
+      ---------------------------------------------
+
       FUN = { icon = "⨐", color = "fn", alt = { "TESTING", "PASSED", "FAILED" } },
       --FUN:
       FUN_1 = { icon = "⨐", color = "warning", alt = { "TESTING", "PASSED", "FAILED" } },
@@ -49,6 +56,8 @@ return {
       --FUN_2:
       FUN_3 = { icon = "⨐", color = "creamCHa", alt = { "TESTING", "PASSED", "FAILED" } },
       --FUN_3:
+      ---------------------------------------------
+
       R = { icon = "🟥", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
       --R:
       R2 = { icon = "🍎", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
@@ -65,17 +74,22 @@ return {
       --Y:
       Y2 = { icon = "💛", color = "yellowx", alt = { "TESTING", "PASSED", "FAILED" } },
       --Y2:
+      ---------------------------------------------
+
       DX = { icon = "⛔", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
       --DX:
       IMP = { icon = "👿", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
       --IMP:
+      ---------------------------------------------
+
       P1a = { icon = "1", color = "greenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
       --P1a:
       P1b = { icon = "1", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
       --P1b:
       P1c = { icon = "1", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
       --P1c:
-      --
+      ---------------------------------------------
+
       P2a = { icon = "2", color = "blackCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
       --P2a:
       P2b = { icon = "2", color = "blueCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
