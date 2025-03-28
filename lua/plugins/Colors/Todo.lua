@@ -42,6 +42,14 @@ return {
       --
       DX = { icon = "⛔", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
       IMP = { icon = "👿", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
+
+      P1a = { icon = "", color = "greenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      P1b = { icon = "", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      P1c = { icon = "", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+
+      P2a = { icon = "", color = "blackCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
+      P2b = { icon = "", color = "blueCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
+      P2c = { icon = "", color = "lightPinkCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
     }
 
     M.colors = {
@@ -73,12 +81,14 @@ return {
       blackCHa = "#000000",
       mehandiCHa = "#2C3930",
       lightCHa = "#B5828C",
-      greenCHa = "#3E7B27",
-      darkGreenCHa = "#123524",
-      contrastGreenCHa = "#EFE3C2",
-      lightPinkCHa = "#FCC6FF",
-      lightPinkCHa = "#FCC6FF",
-      lightPinkCHa = "#FCC6FF",
+      --palet-1
+      greenCHp1 = "#3E7B27",
+      darkGreenCHp1 = "#123524",
+      contrastGreenCHp1 = "#EFE3C2",
+      --palet-2
+      blackCHp2 = "#2A3335",
+      blueCHp2 = "#0A5EB0",
+      lightPinkCHp2 = "#FCC6FF",
     }
 
     M.options = {
