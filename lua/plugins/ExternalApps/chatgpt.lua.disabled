@@ -1,0 +1,42 @@
+return {
+  "jackMort/ChatGPT.nvim",
+  event = "VeryLazy",
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope.nvim",
+  },
+  config = function()
+    -- Optional: load API key from a file (recommended secure method)
+    local key_file = vim.fn.expand("~/.config/chatgpt.nvim/api-key.txt")
+    if vim.fn.filereadable(key_file) == 1 then
+      vim.env.OPENAI_API_KEY = vim.fn.readfile(key_file)[1]
+    end
+
+    require("chatgpt").setup({})
+
+    -- 🧠 Normal Mode Keybindings (under <leader>C)
+    vim.keymap.set("n", "<leader>Cg", "<cmd>ChatGPT<CR>", { desc = "ChatGPT: Open Chat" })
+    vim.keymap.set(
+      "n",
+      "<leader>Ce",
+      "<cmd>ChatGPTEditWithInstructions<CR>",
+      { desc = "ChatGPT: Edit with Instructions" }
+    )
+    vim.keymap.set("n", "<leader>Cc", "<cmd>ChatGPTCompleteCode<CR>", { desc = "ChatGPT: Complete Code" })
+    vim.keymap.set("n", "<leader>Ca", "<cmd>ChatGPTActAs<CR>", { desc = "ChatGPT: Act As Prompt" })
+
+    -- 📋 Visual Mode Keybindings
+    vim.keymap.set("v", "<leader>Ce", ":ChatGPTEditWithInstructions<CR>", { desc = "ChatGPT: Edit Selection" })
+    vim.keymap.set("v", "<leader>Cc", ":ChatGPTCompleteCode<CR>", { desc = "ChatGPT: Complete Selection" })(
+      -- Which-key integration (so it shows in <leader>?)
+      {
+        { "<leader>C", group = "ChatGPT" },
+        { "<leader>Ca", desc = "Act As Prompt" },
+        { "<leader>Cc", desc = "Complete Code" },
+        { "<leader>Ce", desc = "Edit with Instructions" },
+        { "<leader>Cg", desc = "Open ChatGPT UI" },
+      }
+    )
+  end,
+}
