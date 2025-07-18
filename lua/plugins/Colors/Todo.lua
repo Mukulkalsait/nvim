@@ -48,13 +48,13 @@ return {
       --ID:
       ---------------------------------------------
 
-      FUN = { icon = "⨐", color = "fn", alt = { "TESTING", "PASSED", "FAILED" } },
+      FUN = { icon = "😈", color = "fn", alt = { "TESTING", "PASSED", "FAILED" } },
       --FUN:
-      FUN_1 = { icon = "⨐", color = "warning", alt = { "TESTING", "PASSED", "FAILED" } },
+      FUN_1 = { icon = "😍", color = "warning", alt = { "TESTING", "PASSED", "FAILED" } },
       --FUN_1:
-      FUN_2 = { icon = "⨐", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+      FUN_2 = { icon = "🙅", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
       --FUN_2:
-      FUN_3 = { icon = "⨐", color = "creamCHa", alt = { "TESTING", "PASSED", "FAILED" } },
+      FUN_3 = { icon = "😷", color = "creamCHa", alt = { "TESTING", "PASSED", "FAILED" } },
       --FUN_3:
       ---------------------------------------------
 
