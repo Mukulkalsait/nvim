@@ -171,6 +171,17 @@ return {
             end
           end,
         },
+        -- B:reStructuredText
+        rst_lsp = {
+          settings = {
+            rst = {
+              validate = true,
+              lint = {
+                enabled = true,
+              },
+            },
+          },
+        },
         -- B:ESLint
         eslint = {
           settings = {
@@ -244,6 +255,7 @@ return {
         "yaml",
         "markdown",
         "sql",
+        "rst",
       },
       autotag = {
         enable = true,
@@ -280,6 +292,7 @@ return {
         typescriptreact = { "eslint" },
         css = { "stylelint" },
         php = { "phpcs" },
+        rst = { "rstcheck" },
       }
       -- Y: for  berrer performance only evoke on save not on textchange
       -- vim.api.nvim_create_autocmd({ "BufWritePost", "TextChanged" }, {
@@ -330,6 +343,8 @@ return {
         "php-cs-fixer",
         "phpcs",
         "typescript-language-server",
+        "rstcheck", -- .rst files
+        -- "rst-lsp", -- .rst files
       })
       vim.fn.system("pnpm add --global @types/jquery") -- Y: this will insure the jquery is installed with PNPM
       return opts
