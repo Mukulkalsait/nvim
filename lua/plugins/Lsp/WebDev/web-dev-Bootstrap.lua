@@ -9,6 +9,14 @@ return {
       "folke/neodev.nvim",
     },
     opts = {
+
+
+    -- PATH = "prepend", -- use system tools (from Nix)
+    -- ensure_installed = {}, -- leave empty
+    -- automatic_installation = false,
+
+
+      
       -- IMP: Global LSP Settings
       diagnostics = {
         underline = true,
@@ -328,28 +336,15 @@ return {
     end,
   },
   -- R:Ensure Mason installs all needed tools
-  {
-    "williamboman/mason.nvim",
-    opts = function(_, opts)
-      opts = opts or {}
-      opts.ensure_installed = opts.ensure_installed or {}
-      vim.list_extend(opts.ensure_installed, {
-        "html-lsp",
-        "css-lsp",
-        "tailwindcss-language-server",
-        "emmet-ls",
-        "eslint-lsp",
-        "stylelint-lsp",
-        "php-cs-fixer",
-        "phpcs",
-        "typescript-language-server",
-        "rstcheck", -- .rst files
-        -- "rst-lsp", -- .rst files
-      })
-      vim.fn.system("pnpm add --global @types/jquery") -- Y: this will insure the jquery is installed with PNPM
-      return opts
-    end,
-  },
+ {
+  "williamboman/mason.nvim",
+  opts = {
+    PATH = "prepend", -- use system tools (from Nix)
+    ensure_installed = {}, -- leave empty
+    automatic_installation = false,
+   },
+ }
+
 
   -- R: To format the PHP With HTML files.
   {
