@@ -9,14 +9,6 @@ return {
       "folke/neodev.nvim",
     },
     opts = {
-
-
-    -- PATH = "prepend", -- use system tools (from Nix)
-    -- ensure_installed = {}, -- leave empty
-    -- automatic_installation = false,
-
-
-      
       -- IMP: Global LSP Settings
       diagnostics = {
         underline = true,
