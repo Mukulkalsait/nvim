@@ -9,7 +9,7 @@ return {
   opts = {
     storage = {
       -- home = vim.fn.stdpath("config") .. "/home/mukuldk/1Home/1Projects/class/2_rust-Programming/3_leetCode/leetnvim/", Y: here vim.fn.stdpath("config") adds /home/$user/.config
-      home = "/home/mukuldk/1Home/1Projects/class/2_rust-Programming/3_leetCode/leetnvim/src/bin/",
+      home = "/home/mukuldk/1_file/3_git_projects/2_rust-Programming/3_leetCode/leetnvim/src/bin/",
       cache = vim.fn.stdpath("cache") .. "/leetcode", -- optional
     },
     -- your leetcode configuration
