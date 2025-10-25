@@ -1,18 +1,26 @@
 return {
   "kawre/leetcode.nvim",
+  enabled = true, -- Set to false if you want to disable temporarily
+  build = ":TSUpdate html",
   dependencies = {
     "nvim-telescope/telescope.nvim",
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
-  opts = {
-    storage = {
-      -- home = vim.fn.stdpath("config") .. "/home/mukuldk/1Home/1Projects/class/2_rust-Programming/3_leetCode/leetnvim/", Y: here vim.fn.stdpath("config") adds /home/$user/.config
-      home = "/home/mukuldk/1_file/3_git_projects/2_rust-Programming/3_leetCode/leetnvim/src/bin/",
-      cache = vim.fn.stdpath("cache") .. "/leetcode", -- optional
-    },
-    -- your leetcode configuration
-    lang = "rust",
-  },
+  config = function()
+    -- Ensure the directory exists before setup
+    local home_path = "/home/mukuldk/1_file/3_Repos_All/A_gitHub/2_rust-Programming/3_leetCode/leetnvim/src/bin/"
+    
+    -- Create directory if it doesn't exist
+    vim.fn.mkdir(home_path, "p")
+    
+    require("leetcode").setup({
+      storage = {
+        home = home_path,
+        cache = vim.fn.stdpath("cache") .. "/leetcode",
+      },
+      lang = "rust",
+    })
+  end,
 }
