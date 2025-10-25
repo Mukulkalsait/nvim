@@ -12,20 +12,6 @@ return {
       },
     },
   },
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   opts = {
-  --     user_default_options = {
-  --       emmet_ls = {},
-  --       intelephense = {},
-  --       phpactor = {},
-  --       tailwindcss = {},
-  --       tailwind = {},
-  --       eslint = {},
-  --       sqlls = {},
-  --     },
-  --   },
-  -- },
   -- TODO:
   {
     "hrsh7th/nvim-cmp",
@@ -41,31 +27,7 @@ return {
       end
     end,
   },
-  -- Y: this is tryginto install cmp-nvim-lsp but not working.
-  -- {
-  --   "hrsh7th/nvim-cmp",
-  --   dependencies = {
-  --     { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
-  --     "hrsh7th/cmp-nvim-lsp", -- Required for LSP completions
-  --     "hrsh7th/cmp-buffer", -- Optional: For buffer completions
-  --     "hrsh7th/cmp-path", -- Optional: For path completions
-  --   },
-  --   opts = function(_, opts)
-  --     -- Ensure LSP source is enabled
-  --     opts.sources = {
-  --       { name = "nvim_lsp" }, -- LSP completions
-  --       { name = "buffer" }, -- Buffer completions
-  --       { name = "path" }, -- Path completions
-  --     }
-  --
-  --     -- Original LazyVim kind icon formatter
-  --     local format_kinds = opts.formatting.format
-  --     opts.formatting.format = function(entry, item)
-  --       format_kinds(entry, item) -- Add icons
-  --       return require("tailwindcss-colorizer-cmp").formatter(entry, item)
-  --     end
-  --   end,
-  -- },
+  -- Y: This is Trying to install cmp-nvim-lsp but not working.
   {
     "luckasRanarison/tailwind-tools.nvim",
     name = "tailwind-tools",
