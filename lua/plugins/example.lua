@@ -10,15 +10,15 @@ if true then return {} end
 -- * override the configuration of LazyVim plugins
 return {
   -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  -- { "ellisonleao/gruvbox.nvim" },
 
   -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
+  -- {
+  --   "LazyVim/LazyVim",
+  --   opts = {
+  --     colorscheme = "gruvbox",
+  --   },
+  -- },
 
   -- change trouble config
   {
@@ -202,16 +202,12 @@ return {
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },
 
-  -- add any tools you want to have installed below
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shellcheck",
-        "shfmt",
-        "flake8",
-      },
-    },
-  },
+  -- DX: NIXOS:meson stoped.
+
+   { "mason-org/mason.nvim", enabled = false },
+  { "mason-org/mason-lspconfig.nvim", enabled = false },
+  { "williamboman/mason.nvim", enabled = false },
+  { "williamboman/mason-lspconfig.nvim", enabled = false },
+  { "WhoIsSethDaniel/mason-tool-installer.nvim", enabled = false },
+
 }
