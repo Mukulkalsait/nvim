@@ -1,3 +1,4 @@
+-- Y: undo tree its super awsome.
 return {
   "jiaoshijie/undotree",
   dependencies = "nvim-lua/plenary.nvim",
