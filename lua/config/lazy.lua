@@ -23,6 +23,7 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
     { import = "plugins" },
+    { import = "plugins/Lsp/" },
     { import = "plugins/Lsp/WebDev" },
     -- { import = "plugins/Lsp/Rust" },
     -- { import = "plugins/Lsp/Java" },
@@ -70,12 +71,12 @@ require("lazy").setup({
 
 -- DX: Debuging
 -- this code will show if HTML is slowly saving.
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.html",
-  callback = function()
-    print("Save starting")
-    vim.defer_fn(function()
-      print("Save completed")
-    end, 0)
-  end,
-})
+-- vim.api.nvim_create_autocmd("BufWritePre", {
+--   pattern = "*.html",
+--   callback = function()
+--     print("Save starting")
+--     vim.defer_fn(function()
+--       print("Save completed")
+--     end, 0)
+--   end,
+-- })
