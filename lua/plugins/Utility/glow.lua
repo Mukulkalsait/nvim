@@ -9,7 +9,7 @@ return {
 
   opts = {
     -- style = "dracula", -- "auto" tries to detect your Neovim background option. Possible values: "dark", "light", "auto"
-    style = "./glowDraculaCostume.json", -- "auto" tries to detect your Neovim background option. Possible values: "dark", "light", "auto"
+    style = "~/.config/nvim/plugins/Utility/glowDraculaCostume.json", -- "auto" tries to detect your Neovim background option. Possible values: "dark", "light", "auto"
     pager= false, -- with paper true, I Have not idea what difference it make.
     width = 500,
     height = 500,
