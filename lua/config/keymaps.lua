@@ -14,3 +14,9 @@ vim.api.nvim_create_autocmd("FileType", {
     end, { buffer = true, desc = "Format HTML in PHP" })
   end,
 })
+
+
+local wk = require("which-key")
+wk.add({
+  { "<leader>m",icon = " ", group = "Preview" },
+})
