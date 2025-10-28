@@ -10,7 +10,6 @@ return {
   opts = {
     -- style = "dark", -- "auto" tries to detect your Neovim background option. Possible values: "dark", "light", "auto"
     -- style = "dark|light", -- filled automatically with your current editor background, you can override using glow json style
-    style = "/home/mukuldk/.config/nvim/plugins/Utility/glowstyle.json", -- "auto" tries to detect your Neovim background option. Possible values: "dark", "light", "auto"
     -- pager= false, -- with paper true, I Have not idea what difference it make.
 
     width = 500,
