@@ -1,38 +1,48 @@
-return {
-  "mrcjkb/rustaceanvim",
-  version = "^6",  -- Use latest stable
-  ft = { "rust" },
-  opts = {
-    server = {
-      settings = {
-        ["rust-analyzer"] = {
-          cargo = {
-            allFeatures = true,
-            buildScripts = { enable = true },
-            loadOutDirsFromCheck = true,
-          },
-          check = {
-            command = "clippy",
-            extraArgs = { "--no-deps" },
-          },
-          checkOnSave = true,
-          diagnostics = { enable = true },
-          files = {
-            excludeDirs = { ".direnv", ".git", ".github", ".gitlab", "bin", "node_modules", "target", "venv", ".venv" },
-          },
-          procMacro = { enable = true },
-          rust = {
-            analyzerTargetDir = true,
-            linkedProjects = { "Cargo.toml" },  -- Explicitly link to Cargo.toml for your project
+return{
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6",
+    ft = { "rust" },
+    opts = {
+      server = {
+        cmd = function()
+          -- Use rustup's rust-analyzer (stable or project-specific)
+          local toolchain = "stable-x86_64-unknown-linux-gnu"  -- Adjust if using nightly
+          local ra_path = vim.fn.expand("~/.rustup/toolchains/" .. toolchain .. "/bin/rust-analyzer")
+          if vim.fn.filereadable(ra_path) == 1 then
+            return { ra_path }
+          end
+          -- Fallback to PATH (Nix if rustup fails)
+          return { "rust-analyzer" }
+        end,
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+              buildScripts = { enable = true },
+              loadOutDirsFromCheck = true,
+            },
+            check = {
+              command = "clippy",  -- Uses nightly if project sets it
+              extraArgs = { "--no-deps" },
+            },
+            checkOnSave = true,
+            diagnostics = { enable = true },
+            files = {
+              excludeDirs = { ".direnv", ".git", ".github", ".gitlab", "bin", "node_modules", "target", "venv", ".venv" },
+            },
+            procMacro = { enable = true },
+            rust = {
+              analyzerTargetDir = true,
+              linkedProjects = { "Cargo.toml" },  -- Auto-detects workspace
+              sysrootSrc = vim.env.RUST_SRC_PATH,  -- Ties to your env for std lib
+            },
           },
         },
       },
-      cmd = { "rust-analyzer" },  -- Use Nix-installed rust-analyzer
-    },
-    -- Optional: Enable inlay hints, testing, etc.
-    tools = {
-      inlay_hints = { auto = true },
+      tools = {
+        inlay_hints = { auto = true },  -- Optional: Rust hints
+      },
     },
   },
 }
-
