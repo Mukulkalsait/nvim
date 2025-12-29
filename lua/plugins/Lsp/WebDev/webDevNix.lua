@@ -90,7 +90,8 @@ return {
                 loadOutDirsFromCheck = true,
               },
               check = {
-                command = "clippy",
+                command = "check",
+                -- command = "clippy",
                 extraArgs = { "--no-deps" },
               },
               checkOnSave = true,
