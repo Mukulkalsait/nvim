@@ -80,29 +80,29 @@ return {
         },
         nil_ls = {}, -- Nix LSP
         -- Y:RUST IS WORKING
-        rust_analyzer = {  -- Consolidated settings (remove duplicates)
-          cmd = { "rust-analyzer" },  -- Use the standard one
-          settings = {
-            ["rust-analyzer"] = {
-              cargo = {
-                allFeatures = true,
-                buildScripts = { enable = true },
-                loadOutDirsFromCheck = true,
-              },
-              check = {
-                command = "check",
-                -- command = "clippy",
-                extraArgs = { "--no-deps" },
-              },
-              checkOnSave = true,
-              diagnostics = { enable = true },
-              files = {
-                excludeDirs = { ".direnv", ".git", ".github", ".gitlab", "bin", "node_modules", "target", "venv", ".venv" }
-              },
-              procMacro = { enable = true },
-            },
-          },
-        },
+        -- rust_analyzer = {  -- Consolidated settings (remove duplicates)
+        --   cmd = { "rust-analyzer" },  -- Use the standard one
+        --   settings = {
+        --     ["rust-analyzer"] = {
+        --       cargo = {
+        --         allFeatures = true,
+        --         buildScripts = { enable = true },
+        --         loadOutDirsFromCheck = true,
+        --       },
+        --       check = {
+        --         command = "check",
+        --         -- command = "clippy",
+        --         extraArgs = { "--no-deps" },
+        --       },
+        --       checkOnSave = true,
+        --       diagnostics = { enable = true },
+        --       files = {
+        --         excludeDirs = { ".direnv", ".git", ".github", ".gitlab", "bin", "node_modules", "target", "venv", ".venv" }
+        --       },
+        --       procMacro = { enable = true },
+        --     },
+        --   },
+        -- },
         phpactor = {  -- For PHP completion/hover
           filetypes = { "php" },
         },
