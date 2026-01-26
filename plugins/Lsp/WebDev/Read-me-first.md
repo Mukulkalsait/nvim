@@ -32,6 +32,8 @@ we alos need java formater ni next time
 we lnstalled some rust Mason: and rust preaty much worked automatically.
 
 --this is the one that work every time we see it in
+  
+- latest: if i only install toolchain with rustup everyting works automatically dont need to add anyting rust-analyzer is the best in this.
 
     ◍ rustywind (keywords: angular, html, jsx, javascript, typescript, vue)
 
