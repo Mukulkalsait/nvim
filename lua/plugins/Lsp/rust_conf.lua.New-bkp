@@ -1,0 +1,50 @@
+-- rust_config.lua
+-- Configuration for Rust-specific plugins in Neovim
+
+return {
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6", -- Use the latest stable version
+    ft = { "rust" }, -- Load only for Rust files
+    opts = {
+      server = {
+        cmd = { vim.fn.expand("~/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/bin/rust-analyzer") },
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+              buildScripts = { enable = true },
+              loadOutDirsFromCheck = true,
+            },
+            check = {
+              command = "clippy",
+              extraArgs = { "--no-deps" },
+            },
+            checkOnSave = true,
+            diagnostics = { enable = true },
+            files = {
+              excludeDirs = { ".direnv", ".git", ".github", ".gitlab", "bin", "node_modules", "target", "venv", ".venv" },
+            },
+            procMacro = { enable = true },
+            rust = {
+              analyzerTargetDir = true,
+              linkedProjects = { "Cargo.toml" },
+            },
+          },
+        },
+        on_attach = function(client, bufnr)
+          if client.server_capabilities.inlayHintProvider then
+            vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+          end
+          vim.keymap.set("n", "<leader>th", function()
+            local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
+            vim.lsp.inlay_hint.enable(not enabled, { bufnr = bufnr })
+          end, { buffer = bufnr, desc = "Toggle Inlay Hints" })
+        end,
+      },
+      tools = {
+        inlay_hints = { auto = true },
+      },
+    },
+  },
+}

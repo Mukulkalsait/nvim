@@ -13,20 +13,5 @@ vim.opt.clipboard = "unnamedplus"
 require("config.performance")
 
 -- vim.filetype.add({ extension = { rgvp = "php" } })
-require'lspconfig'.rust_analyzer.setup {
-
-  on_attach = function(client, bufnr)
-    -- 🧠 Enable inlay hints automatically when LSP attaches
-    if client.server_capabilities.inlayHintProvider then
-      vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-    end
-  --   -- (Optional) Toggle keybinding: <leader>th
-  --   vim.keymap.set("n", "<leader>th", function()
-  --     local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = bufnr })
-  --     vim.lsp.inlay_hint.enable(not enabled, { bufnr = bufnr })
-  --   end, { buffer = bufnr, desc = "Toggle Inlay Hints" })
-  end,
-
-}
 
 
