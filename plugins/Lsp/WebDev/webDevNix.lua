@@ -79,29 +79,6 @@ return {
           },
         },
         nil_ls = {}, -- Nix LSP
-        -- Y:RUST IS WORKING
-        -- rust_analyzer = {  -- Consolidated settings (remove duplicates)
-        --   cmd = { "rust-analyzer" },  -- Use the standard one
-        --   settings = {
-        --     ["rust-analyzer"] = {
-        --       cargo = {
-        --         allFeatures = true,
-        --         buildScripts = { enable = true },
-        --         loadOutDirsFromCheck = true,
-        --       },
-        --       check = {
-        --         command = "clippy",
-        --         extraArgs = { "--no-deps" },
-        --       },
-        --       checkOnSave = true,
-        --       diagnostics = { enable = true },
-        --       files = {
-        --         excludeDirs = { ".direnv", ".git", ".github", ".gitlab", "bin", "node_modules", "target", "venv", ".venv" }
-        --       },
-        --       procMacro = { enable = true },
-        --     },
-        --   },
-        -- },
         phpactor = {  -- For PHP completion/hover
           filetypes = { "php" },
         },
@@ -219,7 +196,7 @@ return {
         html = { "biome" },  -- Optional: Biome supports HTML too
         css = { "stylelint" },  -- Keep stylelint or switch if needed
         nix = { "nixpkgs_fmt" },
-        rust = { "rustfmt" },
+        -- rust = { "rustfmt" },
         php = { "blade-formatter" },
         sql = { "sql-formatter" },
         sh = { "shfmt" },
