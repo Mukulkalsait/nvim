@@ -27,28 +27,6 @@ require'lspconfig'.rust_analyzer.setup {
   --   end, { buffer = bufnr, desc = "Toggle Inlay Hints" })
   end,
 
-  settings = {
-    ['rust-analyzer'] = {
-      checkOnSave = { command = "clippy" },
-      rust = {
-        analyzerTargetDir = true,
-        linkedProjects = { "Cargo.toml" },
-      },
-      cargo = {
-        allFeatures = true,
-        buildScripts = { enable = true },
-        loadOutDirsFromCheck = true,
-      },
-      diagnostics = { enable = true },
-      files = {
-        excludeDirs = { ".direnv", ".git", ".github", ".gitlab", "bin", "node_modules", "target", "venv", ".venv" },
-      },
-      procMacro = { enable = true },
-    },
-  },
-  env = {
-    RUST_SRC_PATH = vim.env.RUST_SRC_PATH,  -- Explicitly pass RUST_SRC_PATH
-  },
 }
 
 
