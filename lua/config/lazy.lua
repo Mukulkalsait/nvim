@@ -24,7 +24,7 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
     { import = "plugins/Lsp/" },
-    { import = "plugins/Lsp/WebDev" },
+    { import = "plugins/Lsp/webdev" },
     -- { import = "plugins/Lsp/Rust" },
     -- { import = "plugins/Lsp/Java" },
     { import = "plugins/Themes" },
@@ -42,6 +42,9 @@ require("lazy").setup({
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
+
+  -- // R: ROCKS LUA luarocks are stoped here.
+  rocks = { enabled = false, },
 
   checker = {
     enabled = true, -- check for plugin updates periodically
@@ -68,6 +71,7 @@ require("lazy").setup({
   --   requires = { "nvim-lua/plenary.nvim" },
   -- },
 })
+
 
 -- DX: Debuging
 -- this code will show if HTML is slowly saving.
