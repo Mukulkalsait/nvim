@@ -5,6 +5,14 @@ vim.api.nvim_set_keymap("n", "<leader>cp", ": ConformInfo <enter>", { noremap = 
 -- vim.api.nvim_set_keymap("n", "<leader>cP", ":!prettier --write %<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>tL", ":Leet<CR>", { noremap = true, silent = true })
 
+-- B: LSP Navigation
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, { desc = "Goto Declaration" })
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Goto Implementation" })
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Goto References" })
+vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { desc = "Goto Type Definition" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Docs" })
+
 -- Format PHP files with HTML LSP formatter
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "php",
