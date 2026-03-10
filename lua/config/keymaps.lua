@@ -13,6 +13,19 @@ vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Goto References" })
 vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, { desc = "Goto Type Definition" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Docs" })
 
+-- B: Tabs no need check => <space>sk => then serarch tab 
+-- vim.keymap.set("n", "<leader>Th", ":tabprevious<CR>", { desc = "Previous Tab" })
+-- vim.keymap.set("n", "<leader>Tl", ":tabnext<CR>", { desc = "Next Tab" })
+-- vim.keymap.set("n", "<leader>Tn", ":tabnew<CR>", { desc = "New Tab" })
+-- vim.keymap.set("n", "<leader>Td", ":tabclose<CR>", { desc = "Close Tab" })
+-- vim.keymap.set("n", "<leader>To", ":tabonly<CR>", { desc = "Close Other Tabs" })
+
+-- TERMINAL
+-- vim.keymap.set({"n","t"}, "<C-/>", function()
+--   Snacks.terminal.toggle()
+-- end, { desc = "Toggle Terminal" })
+
+
 -- Format PHP files with HTML LSP formatter
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "php",
