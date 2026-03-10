@@ -9,6 +9,6 @@ vim.o.signcolumn = "yes" -- Show sign column for diagnostics
 vim.o.updatetime = 250 -- Update delay for diagnostics
 vim.opt.clipboard = "unnamedplus" -- Load performance optimizations
 
--- require("config.performance") -- vim.filetype.add({ extension = { rgvp = "php" } })
+require("config.performance") -- vim.filetype.add({ extension = { rgvp = "php" } })
 
 
