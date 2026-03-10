@@ -4,31 +4,17 @@ return {
     opts = {
       terminal = {
         shell = vim.o.shell,
-        cwd = vim.loop.cwd(), -- stable working dir
+        cwd = vim.loop.cwd(),
         win = {
           position = "float",
           border = "rounded",
-          wo = { winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder", },
         },
       },
     },
 
     keys = {
-      {
-        "<C-/>",
-        function()
-          Snacks.terminal.toggle()
-        end,
-        mode = { "n", "t" },
-        desc = "Toggle Floating Terminal",
-      },
-      {
-        "<leader>tt",
-        function()
-          Snacks.terminal()
-        end,
-        desc = "New Terminal",
-      }
+      { "<C-/>", function() Snacks.terminal.toggle() end, mode = { "n", "t" }, desc = "Toggle Floating Terminal", },
+      { "<leader>tt", function() Snacks.terminal(nil, { reuse = false }) end, desc = "New Terminal", },
     },
   },
 }

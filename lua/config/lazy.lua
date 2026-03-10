@@ -21,6 +21,7 @@ require("lazy").setup({
     -- import/override with your plugins
     { import = "plugins" },
     { import = "plugins.lsp"},
+    { import = "plugins.lsp.webdev"},
     { import = "plugins.utils"},
     { import = "plugins.themes"},
     { import = "plugins.externalApps"},

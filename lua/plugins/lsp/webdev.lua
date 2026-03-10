@@ -197,7 +197,7 @@ return {
         html = { "biome" },  -- Optional: Biome supports HTML too
         css = { "stylelint" },  -- Keep stylelint or switch if needed
         nix = { "nixpkgs_fmt" },
-        -- rust = { "rustfmt" },
+        rust = { "rustfmt" },
         php = { "blade-formatter" },
         sql = { "sql-formatter" },
         sh = { "shfmt" },

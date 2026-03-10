@@ -31,6 +31,8 @@ return {
       --BASH:
       ZSH = { icon = "", color = "imp" },
       --ZSH:
+      FLAKE = { icon = "❄️", color = "card" },
+      --FLAKE:
       ---------------------------------------------
 
       NAV = { icon = "🗣", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
