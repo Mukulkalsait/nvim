@@ -6,3 +6,4 @@ debug
 foo.*
 *.log
 data
+./0_Others/Older_nvim
