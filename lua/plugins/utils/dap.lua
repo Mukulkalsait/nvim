@@ -32,7 +32,8 @@ return {
         type = "server",
         port = "${port}",
         executable = {
-          command = "codelldb",
+          command = "lldb-dap",
+          -- command = "codelldb",
           args = { "--port", "${port}" },
         },
       }

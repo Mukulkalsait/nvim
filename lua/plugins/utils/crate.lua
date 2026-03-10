@@ -13,6 +13,9 @@ return {
     local crates = require("crates")
     crates.setup(opts)
 
+  local wk = require("which-key")
+  wk.add({ { "<leader>C", group = "Rust Crates", icon = "🦀" }, })
+
     vim.keymap.set("n", "<leader>Ct", crates.toggle,                  { desc = "Toggle crates hints" })
     vim.keymap.set("n", "<leader>Cr", crates.reload,                  { desc = "Reload crates" })
     vim.keymap.set("n", "<leader>Ci", crates.show_popup,              { desc = "Show crate info" })
