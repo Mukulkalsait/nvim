@@ -4,7 +4,17 @@ return {
   opts = {
     -- Don't auto-install parsers on NixOS
     auto_install = false,
-    ensure_installed = {}, -- Empty - install via Nix instead
+    ensure_installed = {
+      "markdown",
+      "markdown_inline",
+      "php",
+      "rust",
+      "python",
+      "javascript",
+      "typescript",
+      "lua",
+      "bash",
+    }, -- Empty - install via Nix instead
     
     autotag = { enable = true },
     indent = { enable = true },
