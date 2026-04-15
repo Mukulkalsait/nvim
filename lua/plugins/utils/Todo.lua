@@ -23,8 +23,6 @@ return {
       --NOTE:
       TEST = { icon = "⏲ ", color = "test" },
       --TEST:
-      PERF = { icon = "💻", color = "rest" },
-      --PERF:
       ---------------------------------------------
 
       BASH = { icon = "", color = "head" },
@@ -37,18 +35,28 @@ return {
 
       NAV = { icon = "🗣", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
       --NAV:
-      HEAD = { icon = "🔝", color = "head", alt = { "TESTING", "PASSED", "FAILED" } },
-      --HEAD:
-      TAG = { icon = "⭕", color = "tag", alt = { "TESTING", "PASSED", "FAILED" } },
+      TYPE = { icon = "🔝", color = "head", alt = { "TESTING", "PASSED", "FAILED" } },
+      --TYPE:
+      Ty = { icon = "🦾", color = "div", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Ty:
+      Ty2 = { icon = "🦿", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Ty2:
+      eg = { icon = "⭕", color = "tag", alt = { "TESTING", "PASSED", "FAILED" } },
+      --eg:
+      TAG = { icon = "⭕", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
       --TAG:
-      CARD = { icon = "🎴", color = "card", alt = { "TESTING", "PASSED", "FAILED" } },
-      --CARD:
-      DIV = { icon = "🍱", color = "div", alt = { "TESTING", "PASSED", "FAILED" } },
-      --DIV:
+      GEN = { icon = "🎴", color = "card", alt = { "TESTING", "PASSED", "FAILED" } },
+      --GEN:
+      LT = { icon = "🍱", color = "div", alt = { "TESTING", "PASSED", "FAILED" } },
+      --LT:
       CLASS = { icon = "🏛️", color = "class", alt = { "TESTING", "PASSED", "FAILED" } },
       --CLASS:
       ID = { icon = "🆔", color = "id", alt = { "TESTING", "PASSED", "FAILED" } },
       --ID:
+      scO = { icon = "🧮", color = "creamCHa" },
+      --scO:
+      tcO = { icon = "⌛", color = "blueCHp2" },
+      --tcO:
       ---------------------------------------------
 
       FUN = { icon = "⨐", color = "fn", alt = { "TESTING", "PASSED", "FAILED" } },
@@ -77,6 +85,7 @@ return {
       --Y:
       Y2 = { icon = "💛", color = "yellowx", alt = { "TESTING", "PASSED", "FAILED" } },
       --Y2:
+      
       ---------------------------------------------
 
       DX = { icon = "⛔", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
