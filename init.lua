@@ -1,7 +1,9 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
-require("config.lazy")
+  require("config.lazy")
 
 
+vim.opt.background = "dark" -- set this to dark or light
+-- vim.cmd.colorscheme "oxocarbon"
 vim.cmd("colorscheme tokyonight-night") -- Replace 'tokyonight' with your desired theme
 -- vim.cmd("colorscheme tokyonight-moon") -- Replace 'tokyonight' with your desired theme
 
