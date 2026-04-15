@@ -27,32 +27,37 @@ return {
       dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
       dap.listeners.before.event_exited["dapui_config"]     = function() dapui.close() end
 
-      -- Rust / C / C++ via codelldb
-      dap.adapters.codelldb = {
-        type = "server",
-        port = "${port}",
-        executable = {
-          command = "lldb-dap",
-          -- command = "codelldb",
-          args = { "--port", "${port}" },
-        },
+      dap.adapters["lldb-dap"] = {
+        type = "executable",
+        command = "lldb-dap",
       }
+
+
       dap.configurations.rust = {
-        {
-          name = "Launch",
-          type = "codelldb",
-          request = "launch",
-          program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
-          end,
-          cwd = "${workspaceFolder}",
-          stopOnEntry = false,
-        },
-      }
+      {
+        name = "Launch",
+        type = "lldb-dap",
+        request = "launch",
+        program = function()
+          local metadata = vim.fn.system("cargo metadata --no-deps --format-version 1")
+          local parsed = vim.fn.json_decode(metadata)
+          local target_dir = parsed.target_directory
+          local bin_name = parsed.packages[1].name
+          return target_dir .. "/debug/" .. bin_name
+        end,
+        cwd = "${workspaceFolder}",
+        stopOnEntry = false,
+        args = {},
+        -- add these two lines: Y: ERROR BY THIS 2 LINES
+        initCommands = { "command script import /run/current-system/sw/lib/rustlib/etc/lldb_lookup.py" },
+        sourceLanguages = { "rust" },
+      },
+    }
     end,
   },
 }
 
+-- Y: 
 -- ```md
 -- | Key | Action |
 -- |-----|--------|
