@@ -1,4 +1,5 @@
-return{
+return {
+  -- nvim-lint (optional - you can keep or remove if not needed)
   {
     "mfussenegger/nvim-lint",
     event = "BufWritePost",
@@ -8,8 +9,8 @@ return{
         javascript = { "biomejs" },
         typescript = { "biomejs" },
         css = { "stylelint" },
-        php = { "phpcs" },  -- Added for PHP
-        sh = { "shellcheck" },  -- For Bash (shellcheck is in pkgs.shellcheck, add to home.packages if needed)
+        php = { "phpcs" },
+        sh = { "shellcheck" },
         bash = { "shellcheck" },
         zsh = { "shellcheck" },
       }
@@ -20,40 +21,36 @@ return{
       })
     end,
   },
+
+  -- Conform (Fixed version)
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
     opts = {
-      -- format_after_save = { lsp_fallback = true },  -- Auto-format on save
-      format_after_save = false,  -- Auto-format OFF on save
+      format_on_save = false, -- Keep disabled
+
       formatters_by_ft = {
         lua = { "stylua" },
-        -- Removed prettier/eslint (Biome replaces for JS/TS/JSON)
         javascript = { "biome" },
         typescript = { "biome" },
         json = { "biome" },
-        html = { "biome" },  -- Optional: Biome supports HTML too
-        css = { "stylelint" },  -- Keep stylelint or switch if needed
+        html = { "biome" },
+        yaml = { "biome" },
         nix = { "nixpkgs_fmt" },
-        rust = { "rustfmt" , lsp_format = "fallback"},
-        php = { "blade-formatter" },
-        sql = { "sql-formatter" },
+        rust = { "rustfmt" },
         sh = { "shfmt" },
         bash = { "shfmt" },
         zsh = { "shfmt" },
-        yaml = { "biome" },  -- Biome supports YAML
-        dockerfile = { "dockfmt" },
+        php = { "blade-formatter" },
       },
+
+      -- costome formating can be created here.
       formatters = {
-        biome = {
-          command = "biome",
-          args = { "format", "--stdin-file-path", "$FILENAME" },
-          require_cwd = false,  -- Don't require root (fixes standalone files)
-        },
-        ["sql-formatter"] = {  -- Fix: Explicit config for sql-formatter
-          command = "sql-formatter",
-          args = { "--fix" },
-        },
+        -- biome_nix = {
+        --   command = vim.fn.exepath("biome"),
+        --   args = { "format", "--write", "--stdin-file-path", "$FILENAME" },
+        --   require_cwd = false,
+        -- },
       },
     },
   },

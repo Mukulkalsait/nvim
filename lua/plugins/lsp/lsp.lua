@@ -35,13 +35,30 @@ return {
         },
         cssls = {},
         tailwindcss = {
-          filetypes = { "html", "php", "css", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+          filetypes = {
+            "html",
+            "php",
+            "css",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+          },
         },
         emmet_ls = {
-          filetypes = { "html", "php", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+          filetypes = {
+            "html",
+            "php",
+            "css",
+            "scss",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+          },
         },
         vtsls = {
-          cmd = { "typescript-language-server", "--stdio" },  -- Fix: Use correct Nix binary name
+          cmd = { "typescript-language-server", "--stdio" }, -- Fix: Use correct Nix binary name
           filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "jsx", "tsx" },
           settings = {
             typescript = {
@@ -79,40 +96,42 @@ return {
           },
         },
         nil_ls = {}, -- Nix LSP
-        phpactor = {  -- For PHP completion/hover
+        phpactor = { -- For PHP completion/hover
           filetypes = { "php" },
         },
-        jsonls = {},  -- For JSON
+        jsonls = {}, -- For JSON
         sqls = {
-          cmd = { "sqls" },  -- Explicit cmd for stability
+          cmd = { "sqls" }, -- Explicit cmd for stability
           on_attach = function(client, bufnr)
             -- Optional: Add logging or error handling
             print("sqls attached to buffer " .. bufnr)
           end,
           settings = {
             sqls = {
-              connections = {  -- Edit with real DB (required for full features)
+              connections = { -- Edit with real DB (required for full features)
                 {
-                  driver = "sqlite3",  -- Or 'mysql', 'postgresql'
-                  dataSourceName = "/path/to/your/database.sqlite",  -- Example for SQLite
+                  driver = "sqlite3", -- Or 'mysql', 'postgresql'
+                  dataSourceName = "/path/to/your/database.sqlite", -- Example for SQLite
                 },
               },
             },
           },
-        },  -- For SQL
-        dockerls = {},  -- For Dockerfiles
-        yaml_ls = {  -- For YAML/Kubernetes
+        }, -- For SQL
+        dockerls = {}, -- For Dockerfiles
+
+        yamlls = { -- For YAML/Kubernetes
           settings = {
             yaml = {
               schemas = {
                 ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.0/all.json"] = {
-                  "kubernetes/*.yaml", "*.k8s.yaml", -- Adjust patterns as needed
+                  "kubernetes/*.yaml",
+                  "*.k8s.yaml", -- Adjust patterns as needed
                 },
               },
             },
           },
         },
-        bashls = {},  -- For Bash/ZSH (.sh, .bash, .zsh)
+        bashls = {}, -- For Bash/ZSH (.sh, .bash, .zsh)
       }
 
       for server, config in pairs(servers) do

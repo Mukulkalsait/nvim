@@ -35,13 +35,13 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Docs" })
 
 
 -- Format PHP files with HTML LSP formatter
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "php",
-  callback = function()
-    vim.keymap.set("n", "<leader>cf", function()
-      vim.lsp.buf.format({ name = "html" })
-    end, { buffer = true, desc = "Format HTML in PHP" })
-  end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "php",
+--   callback = function()
+--     vim.keymap.set("n", "<leader>cf", function()
+--       vim.lsp.buf.format({ name = "html" })
+--     end, { buffer = true, desc = "Format HTML in PHP" })
+--   end,
+-- })
 
  -- require("which-key").add({ { "<leader>m",icon = " ", group = "Preview" }, }) -- for markdown file

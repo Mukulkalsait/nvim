@@ -20,11 +20,10 @@ require("lazy").setup({
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
     -- import/override with your plugins
     { import = "plugins" },
-    { import = "plugins.lsp"},
-    { import = "plugins.lsp.webdev"},
-    { import = "plugins.utils"},
-    { import = "plugins.themes"},
-    { import = "plugins.externalApps"},
+    { import = "plugins.lsp" },
+    { import = "plugins.themes" },
+    { import = "plugins.externalApps" },
+    { import = "plugins.utils" },
   },
   defaults = {
     -- By default, only LazyVim plugins will be lazy-loaded. Your custom plugins will load during startup.
@@ -40,7 +39,7 @@ require("lazy").setup({
     enabled = true, -- check for plugin updates periodically
     notify = true, -- notify on update
   },
-  rocks = { enabled = false, },
+  rocks = { enabled = false },
   performance = {
     rtp = {
       -- disable some rtp plugins

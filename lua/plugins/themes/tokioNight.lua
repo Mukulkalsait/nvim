@@ -14,7 +14,8 @@ return {
 
         -- Slightly blue-tinted dark for sidebars
         -- Using #0A0A12 - barely visible blue tint
-        colors.bg_sidebar = "#0A0A12"
+        -- colors.bg_sidebar = "#0A0A12"
+        colors.bg_sidebar = "#161616"
 
         -- Slightly lighter black for floating windows
         -- Using #0A0A0A - just a touch lighter than black
@@ -22,8 +23,9 @@ return {
 
         -- Adjust other dark colors to maintain contrast
         colors.bg_dark = "#0A0A0A"
-        colors.bg_popup = "#0A0A0A"
-        colors.bg_statusline = "#0A0A12"
+        -- colors.bg_popup = "#0A0A0A"
+        colors.bg_popup = "#131313"
+        colors.bg_statusline = "#131313"
 
         -- Make sure search and selection highlights remain visible
         colors.bg_visual = "#193549"

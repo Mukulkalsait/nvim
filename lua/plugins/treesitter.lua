@@ -1,45 +1,47 @@
 return {
-  "nvim-treesitter/nvim-treesitter",
-  build =  false, -- Don't build on NixOS
-  opts = {
-    -- Don't auto-install parsers on NixOS
-    auto_install = false,
-    ensure_installed = {
-      -- "markdown",
-      -- "markdown_inline",
-      -- "php",
-      -- "rust",
-      -- "python",
-      -- "javascript",
-      -- "typescript",
-      -- "lua",
-      -- "bash",
-    }, -- Empty - install via Nix instead
-    autotag = { enable = true },
-    indent = { enable = true },
-    highlight = {
-      enable = true,
-      -- additional_vim_regex_highlighting = { "markdown" },  -- Important for fenced code blocks
-      -- additional_vim_regex_highlighting = true,
-      additional_vim_regex_highlighting = false, --  Y: orignally false: working
-    },
-    incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = "<C-space>",
-        node_incremental = "<C-space>",
-        scope_incremental = false,
-        node_decremental = "<bs>",
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = false,
+    opts = {
+      auto_install = false,
+
+      ensure_installed = {
+        -- "markdown",
+        -- "markdown_inline",
+        -- "php",
+        -- "rust",
+        -- "python",
+        -- "javascript",
+        -- "typescript",
+        -- "lua",
+        -- "bash",
+      }, -- Empty - install via Nix instead
+
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = { "markdown" },
+      },
+
+      indent = { enable = true },
+
+      -- Better code block highlighting in markdown
+      injections = {
+        markdown = { enable = true },
       },
     },
   },
-{
+
+  -- Fixed autotag (loads AFTER Treesitter is ready)
+  {
     "windwp/nvim-ts-autotag",
-    event = "InsertEnter",
+    event = "VeryLazy", -- Important: load later
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     config = function()
-      require("nvim-ts-autotag").setup()
+      require("nvim-ts-autotag").setup({
+        enable_close = true,
+        enable_rename = true,
+        enable_close_on_slash = false,
+      })
     end,
   },
 }
-
