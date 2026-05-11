@@ -1,3 +1,4 @@
+-- Working Perfectly
 return {
   "snacks.nvim",
   opts = {
