@@ -7,7 +7,18 @@ return {
       styles = {
         sidebars = "dark",
         floats = "transparent",
+        keywords = { italic = true },
+        functions = { bold = true },
+        variables = {},
       },
+
+      on_highlights = function(hl, c)
+        hl["@variable"] = { fg = c.orange }
+        hl["@parameter"] = { fg = c.yellow }
+        hl["@string"] = { fg = c.green }
+        hl["@keyword"] = { fg = c.purple, italic = true }
+      end,
+
       on_colors = function(colors)
         -- Main background pure black
         colors.bg = "#000000"
