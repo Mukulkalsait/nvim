@@ -50,7 +50,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 > this is the line
 
 * asdf
-* ;lkj
+* alkj
 
 ```bash
 ls -altir
