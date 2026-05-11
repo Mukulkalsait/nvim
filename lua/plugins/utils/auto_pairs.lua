@@ -1,5 +1,7 @@
+--  Working Perfectly
 return {
   -- closing pairs inserting or {} / [] / ()
+  
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
