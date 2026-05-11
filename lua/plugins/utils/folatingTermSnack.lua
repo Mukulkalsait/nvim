@@ -1,3 +1,4 @@
+-- B: WORKING PERFECTLY
 return {
   {
     "folke/snacks.nvim",
@@ -11,11 +12,6 @@ return {
           border = "rounded",
         },
       },
-    },
-
-    keys = {
-      { "<C-/>", function() Snacks.terminal.toggle() end, mode = { "n", "t" }, desc = "Toggle Floating Terminal", },
-      { "<leader>tt", function() Snacks.terminal(nil, { reuse = false }) end, desc = "New Terminal", },
     },
   },
 }
