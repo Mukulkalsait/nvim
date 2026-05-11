@@ -1,4 +1,4 @@
-
+-- Working Perfectly.
 return {
   "folke/todo-comments.nvim",
   dependencies = { "nvim-lua/plenary.nvim" },
@@ -12,63 +12,21 @@ return {
         alt = { "FIXME", "BUG", "FIXIT", "ISSUE" },
       },
 
-      --INFO:
+      ---------------------------------------------
       TODO = { icon = "✅", color = "info" },
       --TODO:
+      INFO = { icon = "ℹ️", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
+      --INFO:
       HACK = { icon = "🦆", color = "error" },
       --HACK:
-      WARN = { icon = "🔂", color = "warning" },
+      WARN = { icon = "☣️", color = "warning" },
       --WARN:
       NOTE = { icon = "📓", color = "hint" },
       --NOTE:
-      TEST = { icon = "⏲ ", color = "test" },
-      --TEST:
-      ---------------------------------------------
-
-      BASH = { icon = "", color = "head" },
-      --BASH:
-      ZSH = { icon = "", color = "imp" },
-      --ZSH:
-      FLAKE = { icon = "❄️", color = "card" },
-      --FLAKE:
-      ---------------------------------------------
-
-      NAV = { icon = "🗣", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
-      --NAV:
-      TYPE = { icon = "🔝", color = "head", alt = { "TESTING", "PASSED", "FAILED" } },
-      --TYPE:
-      Ty = { icon = "🦾", color = "div", alt = { "TESTING", "PASSED", "FAILED" } },
-      --Ty:
-      Ty2 = { icon = "🦿", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
-      --Ty2:
-      eg = { icon = "⭕", color = "tag", alt = { "TESTING", "PASSED", "FAILED" } },
-      --eg:
-      TAG = { icon = "⭕", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
-      --TAG:
-      GEN = { icon = "🎴", color = "card", alt = { "TESTING", "PASSED", "FAILED" } },
-      --GEN:
-      LT = { icon = "🍱", color = "div", alt = { "TESTING", "PASSED", "FAILED" } },
-      --LT:
-      CLASS = { icon = "🏛️", color = "class", alt = { "TESTING", "PASSED", "FAILED" } },
-      --CLASS:
-      ID = { icon = "🆔", color = "id", alt = { "TESTING", "PASSED", "FAILED" } },
-      --ID:
-      scO = { icon = "🧮", color = "creamCHa" },
-      --scO:
-      tcO = { icon = "⌛", color = "blueCHp2" },
-      --tcO:
-      ---------------------------------------------
-
-      FUN = { icon = "⨐", color = "fn", alt = { "TESTING", "PASSED", "FAILED" } },
-      --FUN:
-      FUN_1 = { icon = "⨐", color = "warning", alt = { "TESTING", "PASSED", "FAILED" } },
-      --FUN_1:
-      FUN_2 = { icon = "⨐", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
-      --FUN_2:
-      FUN_3 = { icon = "⨐", color = "creamCHa", alt = { "TESTING", "PASSED", "FAILED" } },
-      --FUN_3:
-      ---------------------------------------------
-
+      DX = { icon = "⛔", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
+      --DX:
+      IMP = { icon = "👿", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
+      --IMP:
       R = { icon = "🟥", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
       --R:
       R2 = { icon = "🍎", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
@@ -85,29 +43,64 @@ return {
       --Y:
       Y2 = { icon = "💛", color = "yellowx", alt = { "TESTING", "PASSED", "FAILED" } },
       --Y2:
-      
       ---------------------------------------------
-
-      DX = { icon = "⛔", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
-      --DX:
-      IMP = { icon = "👿", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
-      --IMP:
+      BASH = { icon = "", color = "head" },
+      --BASH:
+      ZSH = { icon = "", color = "imp" },
+      --ZSH:
+      FLAKE = { icon = "❄️", color = "card" },
+      --FLAKE:
+      Ty = { icon = "🦾", color = "div", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Ty:
+      Ty2 = { icon = "🦿", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Ty2:
+      eg = { icon = "🙈", color = "tag", alt = { "TESTING", "PASSED", "FAILED" } },
+      --eg:
+      TAG = { icon = "⭕", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --TAG:
+      GEN = { icon = "🎴", color = "card", alt = { "TESTING", "PASSED", "FAILED" } },
+      --GEN:
+      LT = { icon = "🍱", color = "div", alt = { "TESTING", "PASSED", "FAILED" } },
+      --LT:
+      CLASS = { icon = "🏛️", color = "class", alt = { "TESTING", "PASSED", "FAILED" } },
+      --CLASS:
+      ID = { icon = "🆔", color = "id", alt = { "TESTING", "PASSED", "FAILED" } },
+      --ID:
+      scO = { icon = "🧮", color = "creamCHa" },
+      --scO:
+      tcO = { icon = "⌛", color = "blueCHp2" },
+      --tcO:
       ---------------------------------------------
-
-      P1a = { icon = "1", color = "greenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
-      --P1a:
-      P1b = { icon = "1", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
-      --P1b:
-      P1c = { icon = "1", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
-      --P1c:
+      Fn1 = { icon = "⨐", color = "fn", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Fn1:
+      Fn2 = { icon = "⨐", color = "warning", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Fn2:
+      Fn3 = { icon = "⨐", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Fn3:
+      Fn4 = { icon = "⨐", color = "creamCHa", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Fn4:
       ---------------------------------------------
-
-      P2a = { icon = "2", color = "blackCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
-      --P2a:
-      P2b = { icon = "2", color = "blueCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
-      --P2b:
-      P2c = { icon = "2", color = "lightPinkCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
-      --P2c:
+      Iter = { icon = "🔁", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Iter:
+      TYPE = { icon = "🔝", color = "head", alt = { "TESTING", "PASSED", "FAILED" } },
+      --TYPE:
+      Err = { icon = "⁉️", color = "id" },
+      --Err:
+      TEST = { icon = "🧪", color = "test" },
+      --TEST:
+      STRUCT = { icon = "👾", color = "greenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --STRUCT:
+      Struct = { icon = "👾", color = "warning", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Struct:
+      IMPL = { icon = "🛗", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --IMPL:
+      Impl = { icon = "🛗", color = "tag", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Impl:
+      ImplFor = { icon = "🏧", color = "lightPinkCHp2", alt = { "TESTING", "PASSED", "FAILED" } },
+      --ImplFor:
+      LIFETIME = { icon = "🧬", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --LIFETIME:
+      ---------------------------------------------
     }
 
     M.colors = {
