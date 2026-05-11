@@ -8,6 +8,10 @@ return {
       lint.linters_by_ft = {
         javascript = { "biomejs" },
         typescript = { "biomejs" },
+        javascriptreact = { "biomejs" },
+        typescriptreact = { "biomejs" }, -- 🔥 TSX
+        -- javascript = { "biome" },
+        -- typescript = { "biome" },
         css = { "stylelint" },
         php = { "phpcs" },
         sh = { "shellcheck" },
