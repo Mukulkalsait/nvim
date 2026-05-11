@@ -1,4 +1,4 @@
--- ~/.config/nvim/lua/plugins/indent-blankline.lua
+-- ~/.config/nvim/lua/plugins/indent-blankline.lua B: WORKING PERFCETLY
 return {
   "lukas-reineke/indent-blankline.nvim",
   opts = function()
