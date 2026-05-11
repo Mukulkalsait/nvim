@@ -1,3 +1,4 @@
+-- BEST WORKING MARKDOWN = if everytine else works this works perfectly 
 return {
   "MeanderingProgrammer/render-markdown.nvim",
   opts = {
@@ -21,9 +22,4 @@ return {
   },
   ft = { "markdown", "norg", "rmd", "org" },
 }
-
- ftasdfasdf = { "markdown some", "asdf", "rmd", "org" },
- ftasdfasdf = { "markdown some", "asdf", "rmd", "org" },
- ftasdfasdf = { "markdown some", "asdf", "rmd", "org" },
- ftasdfasdf = { "markdown some", "asdf", "rmd", "org" },
 
