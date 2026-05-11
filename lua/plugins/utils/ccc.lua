@@ -1,3 +1,4 @@
+-- Working Perfectly
 -- IMP: ColorPicker-vim  |  KEYMAPS: <leader> c c
 return {
   "uga-rosa/ccc.nvim",
