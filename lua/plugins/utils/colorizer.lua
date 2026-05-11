@@ -1,4 +1,4 @@
--- B: NIXOS VERSION
+-- B: NIXOS VERSION | General Version Working Perfectly
 return {
   {
     "norcalli/nvim-colorizer.lua",
