@@ -1,5 +1,5 @@
 vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site") -- GIVES SOME EXTRA NIX INFO TO VIM.
-vim.env.PATH = "/run/current-system/sw/bin:" .. vim.env.PATH  -- gives path of nix installed tree-sitter Y: WORKS AWESOME.
+vim.env.PATH = "/run/current-system/sw/bin:" .. vim.env.PATH -- gives path of nix installed tree-sitter Y: WORKS AWESOME.
 
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
@@ -15,14 +15,10 @@ vim.opt.clipboard = "unnamedplus" -- Load performance optimizations
 
 require("config.performance") -- vim.filetype.add({ extension = { rgvp = "php" } })
 
-
--- Y: Automatic change the theme on langauge... 
+-- Y: Automatic change the theme on langauge...
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "markdown",
 --   callback = function()
 --     vim.cmd("colorscheme tokyonight-night")
 --   end,
 -- })
-
-
-

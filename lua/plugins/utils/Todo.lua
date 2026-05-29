@@ -80,6 +80,8 @@ return {
       Fn4 = { icon = "⨐", color = "creamCHa", alt = { "TESTING", "PASSED", "FAILED" } },
       --Fn4:
       ---------------------------------------------
+      Trait = { icon = "❄️", color = "card" },
+      --Trait:
       Iter = { icon = "🔁", color = "imp", alt = { "TESTING", "PASSED", "FAILED" } },
       --Iter:
       TYPE = { icon = "🔝", color = "head", alt = { "TESTING", "PASSED", "FAILED" } },

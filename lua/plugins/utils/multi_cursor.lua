@@ -19,8 +19,8 @@ return {
         ----------------------------------------------------------------
         -- LINE CURSORS
         ----------------------------------------------------------------
-        set({ "n", "x" }, "<C-j>", function() mc.lineAddCursor(1) end, { desc = "Add Cursor Below" })
-        set({ "n", "x" }, "<C-k>", function() mc.lineAddCursor(-1) end, { desc = "Add Cursor Above" })
+        set({ "n", "x" }, "<C-up>", function() mc.lineAddCursor(-1) end, { desc = "Add Cursor Below" })
+        set({ "n", "x" }, "<C-down>", function() mc.lineAddCursor(1) end, { desc = "Add Cursor Above" })
         ----------------------------------------------------------------
         -- MANUAL CURSOR TOGGLE
         ----------------------------------------------------------------
