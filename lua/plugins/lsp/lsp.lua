@@ -9,7 +9,6 @@ return {
     config = function()
       local lspconfig = require("lspconfig")
 
-      -- Global diagnostic display settings (fixes missing warnings/errors in Rust/JS/TS)
       vim.diagnostic.config({
         underline = true,
         update_in_insert = false,
@@ -17,72 +16,65 @@ return {
         severity_sort = true,
       })
 
-      -- Setup LSP servers (installed via Nix)
       local servers = {
-        html = {
-          filetypes = { "html", "php" },
-          settings = {
-            html = {
-              suggest = { html5 = true },
-              format = {
-                enable = true,
-                wrapLineLength = 250,
-                wrapAttributes = "auto",
-              },
-              autoClosingTags = true,
-            },
-          },
-        },
-        cssls = {},
-        tailwindcss = {
-          filetypes = {
-            "html",
-            "php",
-            "css",
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-          },
-        },
-        emmet_ls = {
-          filetypes = {
-            "html",
-            "php",
-            "css",
-            "scss",
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-          },
-        },
+        -- RUST ANALYZER (critical for Rust development)
+        -- rust_analyzer = {
+        --   cmd = { "rust-analyzer" },
+        --   filetypes = { "rust" },
+        --   settings = {
+        --     ["rust-analyzer"] = {
+        --       -- Your custom Rust formatting settings
+        --       cargo = {
+        --         allFeatures = true,
+        --         loadOutDirsFromCheck = true,
+        --         runBuildScripts = true,
+        --       },
+        --       procMacro = {
+        --         enable = true,
+        --       },
+        --       checkOnSave = {
+        --         command = "clippy", -- Use clippy on save
+        --       },
+        --       -- IMPORTANT: Rust formatting settings
+        --       rustfmt = {
+        --         extraArgs = { "+nightly" }, -- if you use nightly features
+        --         overrideCommand = nil, -- use default rustfmt
+        --       },
+        --     },
+        --   },
+        -- },
+
         vtsls = {
-          cmd = { "typescript-language-server", "--stdio" }, -- Fix: Use correct Nix binary name
+          cmd = { "vtsls", "--stdio" },
           filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "jsx", "tsx" },
-          settings = {
-            typescript = {
-              inlayHints = {
-                parameterNames = { enabled = "literals" },
-                parameterTypes = { enabled = true },
-                variableTypes = { enabled = true },
-                propertyDeclarationTypes = { enabled = true },
-                functionLikeReturnTypes = { enabled = true },
-              },
-            },
-            javascript = {
-              inlayHints = {
-                parameterNames = { enabled = "literals" },
-                parameterTypes = { enabled = true },
-                variableTypes = { enabled = true },
-                propertyDeclarationTypes = { enabled = true },
-                functionLikeReturnTypes = { enabled = true },
-              },
-            },
-          },
         },
-        eslint = {},
+
+        bashls = {
+          cmd = { "bash-language-server", "start" },
+          filetypes = { "sh", "bash", "zsh" },
+        },
+
+        html = { cmd = { "vscode-html-language-server", "--stdio" } },
+        cssls = { cmd = { "vscode-css-language-server", "--stdio" } },
+        jsonls = { cmd = { "vscode-json-language-server", "--stdio" } },
+
+        yamlls = {
+          cmd = { "yaml-language-server", "--stdio" },
+          filetypes = { "yaml", "yml" },
+        },
+        dockerls = {
+          cmd = { "docker-langserver", "--stdio" }, -- ✅ Use this binary name
+          filetypes = { "dockerfile" },
+        },
+
+        docker_compose_language_service = {
+          cmd = { "docker-compose-langserver", "--stdio" },
+          filetypes = { "dockerfile" }, --# Also works for docker-compose.yml
+          -- filetypes = { "dockerfile", "yaml" }, --# Also works for docker-compose.yml
+        },
+
         lua_ls = {
+          cmd = { "lua-language-server" },
           settings = {
             Lua = {
               runtime = { version = "LuaJIT" },
@@ -95,47 +87,27 @@ return {
             },
           },
         },
-        nil_ls = {}, -- Nix LSP
-        phpactor = { -- For PHP completion/hover
-          filetypes = { "php" },
-        },
-        jsonls = {}, -- For JSON
-        sqls = {
-          cmd = { "sqls" }, -- Explicit cmd for stability
-          on_attach = function(client, bufnr)
-            -- Optional: Add logging or error handling
-            print("sqls attached to buffer " .. bufnr)
-          end,
-          settings = {
-            sqls = {
-              connections = { -- Edit with real DB (required for full features)
-                {
-                  driver = "sqlite3", -- Or 'mysql', 'postgresql'
-                  dataSourceName = "/path/to/your/database.sqlite", -- Example for SQLite
-                },
-              },
-            },
-          },
-        }, -- For SQL
-        dockerls = {}, -- For Dockerfiles
 
-        yamlls = { -- For YAML/Kubernetes
-          settings = {
-            yaml = {
-              schemas = {
-                ["https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.0/all.json"] = {
-                  "kubernetes/*.yaml",
-                  "*.k8s.yaml", -- Adjust patterns as needed
-                },
-              },
-            },
-          },
+        nixd = {
+          cmd = { "nixd" },
+          filetypes = { "nix" },
         },
-        bashls = {}, -- For Bash/ZSH (.sh, .bash, .zsh)
+
+        tailwindcss = {
+          cmd = { "tailwindcss-language-server", "--stdio" },
+          filetypes = { "html", "css", "javascriptreact", "typescriptreact" },
+        },
+
+        emmet_ls = {
+          cmd = { "emmet-language-server", "--stdio" },
+          filetypes = { "html", "css", "javascriptreact", "typescriptreact" },
+        },
       }
 
       for server, config in pairs(servers) do
-        lspconfig[server].setup(config)
+        pcall(function()
+          lspconfig[server].setup(config)
+        end)
       end
     end,
   },
