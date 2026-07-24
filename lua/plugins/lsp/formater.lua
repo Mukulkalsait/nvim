@@ -26,6 +26,7 @@ return {
     -- Custom formatter configuration for rustfmt
     formatters = {
       rustfmt = {
+        -- Y: the main config is in ~/.cofnig/rustfmt/rustfmt.toml  -> NixConfig
         command = "rustfmt",
         args = { "--emit", "stdout" }, -- Output to stdout for conform to handle
         stdin = true,
