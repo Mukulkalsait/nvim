@@ -7,7 +7,7 @@ return {
 
     M.keywords = {
       FIX = {
-        icon = " ",
+        icon = "󰁨 ",
         color = "error",
         alt = { "FIXME", "BUG", "FIXIT", "ISSUE" },
       },
@@ -90,9 +90,13 @@ return {
       --Err:
       TEST = { icon = "🧪", color = "test" },
       --TEST:
-      STRUCT = { icon = "👾", color = "greenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      ENUM = { icon = " ", color = "greenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
+      --ENUM:
+      Enum = { icon = " ", color = "brownCHa", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Enum:
+      STRUCT = { icon = "👾", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
       --STRUCT:
-      Struct = { icon = "👾", color = "warning", alt = { "TESTING", "PASSED", "FAILED" } },
+      Struct = { icon = "👾", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
       --Struct:
       IMPL = { icon = "🛗", color = "darkGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
       --IMPL:
@@ -102,6 +106,12 @@ return {
       --ImplFor:
       LIFETIME = { icon = "🧬", color = "contrastGreenCHp1", alt = { "TESTING", "PASSED", "FAILED" } },
       --LIFETIME:
+      Ref = { icon = "⏺️", color = "class", alt = { "TESTING", "PASSED", "FAILED" } },
+      --Ref:
+      DeRef = { icon = "⚜️", color = "hint", alt = { "TESTING", "PASSED", "FAILED" } },
+      --DeRef:
+      End = { icon = "🔚", color = "redx", alt = { "TESTING", "PASSED", "FAILED" } },
+      --End:
       ---------------------------------------------
     }
 
