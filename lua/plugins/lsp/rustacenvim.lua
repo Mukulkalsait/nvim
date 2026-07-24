@@ -8,7 +8,7 @@ return {
         backend = "svg",
         output = "crate-graph.svg",
       },
-      test_runner = "nextest", -- Y: added for nextest running direclty tests
+      -- test_runner = "nextest", -- Y: added for nextest running direclty tests
     },
     server = {
       settings = {
